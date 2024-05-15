@@ -1,0 +1,32 @@
+.memecontainer img {
+
+    width: 284px;
+    height: 370px;
+    border: 1px;
+}
+.addtextdiv{
+    display: flex;
+    flex-direction: column;
+}
+.button {
+
+    width: 97px;
+    height: 34px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: none;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 20px;
+}
+
+.textarea {
+
+    background-color: #FFFFFF52 ;
+    width: 336px;
+    height: 80px;
+    border: 1px solid #FFFFFF ;
+    border-radius: 8px;
+}

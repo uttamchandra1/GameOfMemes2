@@ -1,0 +1,137 @@
+.homescreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 86px;
+}
+
+.DynammicDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 286px;
+}
+
+.ButtonDiv button {
+    width: 143px;
+    height: 32px;
+    border: 1px solid #3B5C6B;
+    background-color: #CDC7C0;
+}
+.Popular-Button {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    cursor: pointer;
+    width: 143px;
+    height: 32px;
+}
+
+.GameWise-Button {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    cursor: pointer;
+    width: 143px;
+    height: 32px;
+}
+
+.Popular-Button.active , .GameWise-Button.active{
+    background-color: #3B5C6B;
+    color: white;
+
+  }
+
+
+ .gamelist {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 10px;
+    grid-gap: 8px;
+
+}
+  .game {
+    height: 124px;
+    width: 104px;
+    background-color: #3B5C6B;
+    border: 1px solid #3B5C6B;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.game img {
+    width: 104px;
+    height: 104px;
+    
+}
+
+.game p {
+    margin-top: 1px;
+    height: 12px;
+    width: 88px;
+    margin-left: 8px;
+
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 500;
+    color: white;
+    
+
+}
+
+
+.memes-template {
+    display: grid;
+    grid-template-columns: auto auto ;
+    margin-top: 10px;
+    grid-gap: 8px;
+}
+
+.add-caption-div {
+    width: 162px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.add-caption-div button {
+    background-color: #3B5C6B;
+    border: none;
+}
+.meme-image-div img {
+    width: 162px;
+    height: 162px;
+}
+
+.meme-template-container {
+    width: 162px;
+    height: 194px;
+    border-radius: 12px;
+    border: 1px solid #3B5C6B;
+    overflow: hidden;
+    background-color: #3B5C6B;
+}
+
+.add-caption-div button {
+    color: white;
+    width: 125px;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 500;
+}
+
+.add-caption-div img {
+    margin-left: 12px;
+}
+
+.meme-template-page {
+    background-color: #D6D1CC;
+    padding: 4px;
+}

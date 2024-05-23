@@ -1,7 +1,10 @@
+
+
 .backflow {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 336px;
 
 }
 
@@ -15,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 360px;
+
 }
 
 .memecontainer img {
@@ -27,6 +30,7 @@
 .addtextdiv{
     display: flex;
     flex-direction: column;
+   
 }
 .button {
 
@@ -133,7 +137,7 @@ margin-left: 145px;
     display: flex;
     grid-gap: 8px;
 
-    width: 360px;
+    width: 336px;
     height: 56px;
     overflow-x: scroll;
     margin-top: 19px;

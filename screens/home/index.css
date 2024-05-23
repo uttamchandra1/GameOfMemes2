@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.memeTemplateContainer {
+    width: 336px;
+}
+
 .logo-container {
 display: flex;
 justify-content: center;
@@ -54,6 +58,7 @@ margin-top: 86px;
     grid-template-columns: auto auto auto;
     margin-top: 10px;
     grid-gap: 8px;
+    width: 334px;
 
 }
   .game {

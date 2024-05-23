@@ -1,3 +1,23 @@
+.backflow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.backdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.memecontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+}
+
 .memecontainer img {
 
     width: 284px;
@@ -16,10 +36,27 @@
     background-color: #fff;
     border: none;
 
+    font-family: "Montserrat"  , sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: #000000;
     margin-top: 20px;
+}
+
+.sharebutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 32px;
+    background-color: #FFFFFF52;
+    border-radius: 8px;
+    border: none;
+
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Montserrat"  , sans-serif;
+
 }
 
 .textarea {
@@ -29,4 +66,105 @@
     height: 80px;
     border: 1px solid #FFFFFF ;
     border-radius: 8px;
+}
+
+.textdiv {
+    margin-top: 20px;
+}
+
+.settings {
+    display: flex;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.colorPicker {
+    display: flex;
+    margin-left: 12px;
+}
+.increasebutton {
+
+    width: 24px;
+    height: 24px;
+    border-radius: 10px;
+    border: none;
+}
+
+.decreasebutton {
+    margin-left: 8px;
+    font-size: 13px;
+    width: 24px;
+    height: 24px;
+    border-radius: 10px;
+    border: none;
+}
+
+.whitecolor {
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 8px;
+}
+
+.blackcolor {
+    height: 24px;
+    width: 24px;
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+.donebutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background-color: #fff;
+width: 59px;
+height: 24px;
+border-radius: 8px;
+margin-left: 145px;
+
+}
+
+
+
+.selectedgameasset {
+
+    display: flex;
+    grid-gap: 8px;
+
+    width: 360px;
+    height: 56px;
+    overflow-x: scroll;
+    margin-top: 19px;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.assetImg {
+    height: 56px;
+    width: 56px;
+    border-radius: 8px;
+}
+
+.selectedAssetContainer {
+    width: 68px;
+    height: 93px;   
+}
+
+
+.liveTextDiv {
+
+    width: 193px;
+    height: 66px;
+    resize: both;
+    overflow: auto;
+}
+
+.gameasset {
+
+    margin-top: 147px;
 }

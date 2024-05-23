@@ -4,14 +4,13 @@
     height: 90px;
 }
 
-
 .selectedgame {
     display: flex;
     align-items: center;
     height: 36px;
 }
 
-.backflow {
+.backfloww {
     display: flex;
     align-items: center;
 }
@@ -30,7 +29,7 @@ border: 2px 0px 0px 0px;
     color: #3B5C6B;
     height: 17px;
 }
-.seledctedimg {
+.selectedimg {
 
     border-radius: 8px;
     height: 36px;
@@ -48,4 +47,8 @@ border: 2px 0px 0px 0px;
 .memepage {
     display: flex;
     flex-direction: column;
+}
+
+.gamelistdiv{
+    width: 360px;
 }

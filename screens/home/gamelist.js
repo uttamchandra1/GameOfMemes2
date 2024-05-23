@@ -1,4 +1,4 @@
-const  GameList = () => {
+const  GameList = (memeTemplateUrl) => {
 
     const gamelist = document.createElement("div");
     gamelist.className = "gamelist"
@@ -19,8 +19,15 @@ const  GameList = () => {
         gamelist.appendChild(gameDiv);
       
         gameDiv.addEventListener("click" , () => {
-          console.log("clicked")
-          changeScreen(Meme_Page_Screen(game))
+      
+          if (memeTemplateUrl) { // Check if a meme template is already selected
+            console.log("Meme template already selected, opening meme edit screen");
+            changeScreen(Meme_Edit_Screen(memeTemplateUrl, game));
+          } else {
+            console.log("No meme template selected, opening meme page screen");
+            changeScreen(Meme_Page_Screen(game));
+          }
+          
         });
       
       });

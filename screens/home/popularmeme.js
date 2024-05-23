@@ -1,4 +1,4 @@
-const PopularMeme = () => {
+const PopularMeme = (game) => {
   const memeTemplateContainer = document.createElement("div");
   memeTemplateContainer.id = "memes-template";
   memeTemplateContainer.className = "memes-template"
@@ -36,8 +36,12 @@ const PopularMeme = () => {
             image.src = "./assets/Icon.png";
 
             addCaptionButton.addEventListener("click", () => {
-              console.log("clicked");
-              changeScreen(Meme_Edit_Screen(memeTemplateUrl))
+              if (!game) { // Check if the game is not selected
+                console.log("No game selected, opening game selection page");
+                changeScreen(GameSelection_Page(meme , memeTemplateUrl));
+            } else {
+                changeScreen(Meme_Edit_Screen(memeTemplateUrl, game));
+            }
               
             });
 

@@ -2,6 +2,18 @@ const Backflow = () => {
     const backflow = document.createElement("div")
     backflow.className = "backflow"
 
+    const backdiv = document.createElement("div");
+    backdiv.className = "backdiv"
+
+    const sharebutton = document.createElement("button");
+    sharebutton.innerText = "Share"
+    sharebutton.className = "sharebutton"
+
+    const shareimg = document.createElement("img")
+    shareimg.src = "./assets/share.png";
+    shareimg.alt = "share";
+    shareimg.className = "shareimg";
+
     const backimg = document.createElement("img");
     backimg.className = 'backimg';
     backimg.src = "./assets/back.png";
@@ -10,8 +22,15 @@ const Backflow = () => {
     backtext.className = "backtext";
     backtext.innerText = "Start your magic"
 
-    backflow.appendChild(backimg);
-    backflow.appendChild(backtext);
+    backimg.addEventListener("click" , ()=> {
+        changeScreen(Meme_Page_Screen())
+    })
+
+    sharebutton.appendChild(shareimg);
+    backdiv.appendChild(backimg);
+    backdiv.appendChild(backtext);
+    backflow.appendChild(backdiv);
+    backflow.appendChild(sharebutton);
 
     return backflow;
 }

@@ -4,7 +4,7 @@ const Meme_Page_Screen = (game) => {
     memepage.className = "memepage"
 
     memepage.appendChild(GameMeme(game));
-    memepage.appendChild(PopularMeme());
+    memepage.appendChild(PopularMeme(game));
 
     return memepage;
 

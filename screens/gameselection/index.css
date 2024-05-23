@@ -1,0 +1,37 @@
+.gameformeme {
+    width: 360px;
+    height: 88px;
+    margin-top: 10px;
+}
+.upperdiv{
+    display: flex;
+    align-items: center;
+    height: 24px;
+}
+.gameselctionpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+}
+.lowerdiv {
+    display: flex;
+    align-items: center;
+    color: #3B5C6B;
+    margin-top: 8px;
+}
+.selectedmemename {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19.2px;
+    margin-left: 8px;
+
+}
+
+.selectedmeme{
+
+    height: 36px;
+    width: 36px;
+    border-radius: 8px;
+    border: 1px solid #3B5C6B;
+}

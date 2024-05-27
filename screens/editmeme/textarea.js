@@ -158,6 +158,7 @@ const TextArea = (onDone) => {
   liveTextDiv.addEventListener("touchstart", (e) => {
     if (!isResizing) {
       startDragging(e.touches[0].clientX, e.touches[0].clientY);
+      e.preventDefault()
       document.addEventListener("touchmove", onTouchMove);
       document.addEventListener("touchend", stopDragging);
     }
@@ -165,6 +166,7 @@ const TextArea = (onDone) => {
   });
 
   liveTextDiv.addEventListener("focus", () => {
+    console.log("focus")
     liveTextDiv.style.border = "1px dashed black"; // Add border when focused
   });
 

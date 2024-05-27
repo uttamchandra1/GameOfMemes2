@@ -21,9 +21,11 @@ const Buttons = () => {
 
   function hideGameList() {
     Gamelist.style.display = "none";
+    Popularmeme.style.display = "grid";
   }
   function showGameList() {
     Gamelist.style.display = "grid";
+    Popularmeme.style.display = "none";
   }
   
   function displayPopularMeme() {

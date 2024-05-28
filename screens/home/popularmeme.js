@@ -38,9 +38,9 @@ const PopularMeme = (game) => {
             addCaptionButton.addEventListener("click", () => {
               if (!game) { // Check if the game is not selected
                 console.log("No game selected, opening game selection page");
-                changeScreen(GameSelection_Page(meme , memeTemplateUrl));
+                changeScreen(GameSelection_Page(meme , base64));
             } else {
-                changeScreen(Meme_Edit_Screen(memeTemplateUrl, game));
+                changeScreen(Meme_Edit_Screen(base64, game));
             }
               
             });

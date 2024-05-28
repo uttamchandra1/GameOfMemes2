@@ -1,4 +1,4 @@
-const Backflow = () => {
+const Backflow = (memeTemplateUrl) => {
     const backflow = document.createElement("div")
     backflow.className = "backflow"
 
@@ -13,6 +13,12 @@ const Backflow = () => {
     shareimg.src = "./assets/share.png";
     shareimg.alt = "share";
     shareimg.className = "shareimg";
+
+
+    sharebutton.addEventListener("click", () => {
+        createAndDownloadMeme(memeTemplateUrl);
+        console.log(memeTemplateUrl)
+    });
 
     const backimg = document.createElement("img");
     backimg.className = 'backimg';
@@ -34,3 +40,5 @@ const Backflow = () => {
 
     return backflow;
 }
+
+

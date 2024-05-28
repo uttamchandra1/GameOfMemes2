@@ -1,8 +1,10 @@
+let selectedassets = [];
+
 const LoadAsset = (game) => {
   const selectedgameasset = document.createElement("div");
   selectedgameasset.className = "selectedgameasset";
 
-  let selectedassets = [];
+ 
   let initialX, initialY, currentX, currentY;
 
   game.assets.forEach((asset) => {
@@ -189,3 +191,5 @@ const LoadAsset = (game) => {
 
   return selectedgameasset;
 };
+
+

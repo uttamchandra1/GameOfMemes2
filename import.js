@@ -12,10 +12,12 @@ const jsFiles = [
     "./screens/editmeme/editpage.js",
     "./screens/editmeme/selectedmeme.js",
     "./screens/editmeme/addtext.js",
+    "./screens/editmeme/downloadmeme.js",
     "./screens/editmeme/backflow.js",
     "./screens/editmeme/textarea.js",
     "./screens/editmeme/gameasset.js",
     "./screens/editmeme/loadasset.js",
+   
     "./screens/gameselection/gameselect.js",
     "./screens/gameselection/gameformeme.js",
     

@@ -1,4 +1,4 @@
-const GameAsset = (game) => {
+const GameAsset = (game ) => {
 
     const gameasset = document.createElement("div");
     gameasset.className = 'gameasset'

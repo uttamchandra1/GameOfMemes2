@@ -1,9 +1,11 @@
 let selectedassets = [];
+const editscreen = document.querySelector(".editscreen");
 
 const LoadAsset = (game) => {
   const selectedgameasset = document.createElement("div");
   selectedgameasset.className = "selectedgameasset";
 
+  
  
   let initialX, initialY, currentX, currentY;
 
@@ -75,7 +77,9 @@ const LoadAsset = (game) => {
       selectedAssetContainer.appendChild(rotateButton);
 
       // Append the new container to the parent div
-      selectedgameasset.appendChild(selectedAssetContainer);
+      console.log(editscreen)
+      console.log(selectedAssetContainer)
+      editscreen.appendChild(selectedAssetContainer);
 
       const removeContainer = () => {
         console.log("removed");

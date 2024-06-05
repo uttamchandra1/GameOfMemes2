@@ -35,7 +35,7 @@ const PopularMeme = (game) => {
             const image = document.createElement("img");
             image.src = "./assets/Icon.png";
 
-            addCaptionButton.addEventListener("click", () => {
+            buttonDiv.addEventListener("click", () => {
               if (!game) { // Check if the game is not selected
                 console.log("No game selected, opening game selection page");
                 changeScreen(GameSelection_Page(meme , base64));

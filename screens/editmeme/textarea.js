@@ -186,6 +186,8 @@ const TextArea = (onDone) => {
   document.addEventListener("mouseup", () => {
     isResizing = false;
   });
+
+   
   // Make the liveTextDiv focusable
   liveTextDiv.tabIndex = 0;
 

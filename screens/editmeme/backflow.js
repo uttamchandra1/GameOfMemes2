@@ -28,8 +28,8 @@ const Backflow = (memeTemplateUrl) => {
     backtext.className = "backtext";
     backtext.innerText = "Start your magic"
 
-    backimg.addEventListener("click" , ()=> {
-        changeScreen(Meme_Page_Screen())
+    backimg.addEventListener("click" , () => {
+        changeScreen(Home_Screen())
     })
 
     sharebutton.appendChild(shareimg);

@@ -17,8 +17,6 @@ const Backflow = (memeTemplateUrl) => {
 
     sharebutton.addEventListener("click", () => {
         createAndDownloadMeme(memeTemplateUrl);
-        console.log(memeTemplateUrl)
-        console.log("clicked" , error)
     });
 
     const backimg = document.createElement("img");

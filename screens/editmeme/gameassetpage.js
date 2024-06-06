@@ -57,9 +57,10 @@ const GameassetPage = (game , editscreen) => {
 
   document.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
+    e.preventDefault()
     const diffY = startY - e.touches[0].clientY;
     gameassetpage.style.height = `${startHeight + diffY}px`;
-  });
+  },  { passive: false });
 
   document.addEventListener('touchend', () => {
     isDragging = false;

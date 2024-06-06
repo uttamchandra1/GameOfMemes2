@@ -153,10 +153,12 @@ const LoadAsset = (game , editscreen) => {
 
       resizeButton.addEventListener("mousedown", (event) => startResize(event, selectedAssetContainer , clonedAsset));
       resizeButton.addEventListener("touchstart", (event) => startResize(event, selectedAssetContainer , clonedAsset));
-      document.addEventListener("mousemove", (event) => resize(event, selectedAssetContainer , clonedAsset));
-      document.addEventListener("touchmove", (event) => resize(event, selectedAssetContainer , clonedAsset));
-      document.addEventListener("mouseup", (event) => endResize(event, selectedAssetContainer , clonedAsset));
-      document.addEventListener("touchend", (event) => endResize(event, selectedAssetContainer , clonedAsset));
+      resizeButton.addEventListener("mousemove", (event) => resize(event, selectedAssetContainer , clonedAsset));
+      resizeButton.addEventListener("touchmove", (event) => resize(event, selectedAssetContainer , clonedAsset));
+      resizeButton.addEventListener("mouseup", (event) => endResize(event, selectedAssetContainer , clonedAsset));
+      resizeButton.addEventListener("touchend", (event) => endResize(event, selectedAssetContainer , clonedAsset));
+
+      
     });
 
     function startDrag(event, container) {
@@ -215,6 +217,7 @@ const LoadAsset = (game , editscreen) => {
       container.dragging = false;
     }
 
+
     let initialWidth, initialHeight, initialMouseX, initialMouseY;
 
     function startResize(event, container, clonedAsset) {
@@ -259,7 +262,8 @@ const LoadAsset = (game , editscreen) => {
       event.preventDefault();
       container.resizing = false;
     }
-  });
+
+      });
 
   return selectedgameasset ;
 };

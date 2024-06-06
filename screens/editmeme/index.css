@@ -1,6 +1,7 @@
 .editscreen {
     position: relative;
     z-index: 1; /* Ensure it is above the overlay */
+    overflow-x: hidden;
   }
 
 .backflow {
@@ -150,8 +151,8 @@ margin-left: 145px;
 }
 
 .assetImg {
-    height: 56px;
-    width: 56px;
+    height: 72px;
+    width: 72px;
     border-radius: 8px;
 }
 
@@ -170,6 +171,12 @@ margin-left: 145px;
 }
 
 .gameassetpage {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #0000001F;
+    padding-top: 16px;
 
     position: fixed;
   bottom: 0;
@@ -190,4 +197,11 @@ margin-left: 145px;
     border-radius: 8px;
     padding: 8px;
     background-image: url("assets/search.png");
+}
+
+.loadasset {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 12px;
 }

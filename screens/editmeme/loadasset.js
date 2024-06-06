@@ -1,11 +1,10 @@
 let selectedassets = [];
-const editscreen = document.querySelector(".editscreen");
 
-const LoadAsset = (game) => {
+const LoadAsset = (game , editscreen) => {
   const selectedgameasset = document.createElement("div");
-  selectedgameasset.className = "selectedgameasset";
 
-  
+  selectedgameasset.className = "loadasset";
+   
  
   let initialX, initialY, currentX, currentY;
 
@@ -45,7 +44,8 @@ const LoadAsset = (game) => {
       const closeButton = document.createElement("div");
       closeButton.innerHTML = "&#10006;"; // Unicode for 'X'
       closeButton.style.position = "absolute";
-      closeButton.style.left = "44px";
+      closeButton.style.top = "0";
+      closeButton.style.right = "0";
       closeButton.style.cursor = "pointer";
       closeButton.style.backgroundColor = "#414141";
       closeButton.style.color = "white";
@@ -62,8 +62,8 @@ const LoadAsset = (game) => {
       const rotateButton = document.createElement("div");
       rotateButton.innerHTML = "&#x21bb;"; // Unicode for '↻'
       rotateButton.style.position = "absolute";
-      rotateButton.style.top = "75px"; // Positioning below the cloned asset
-      rotateButton.style.left = "20px";
+      rotateButton.style.bottom = "0"; // Positioning below the cloned asset
+      rotateButton.style.left = "0";
       rotateButton.style.cursor = "pointer";
       rotateButton.style.backgroundColor = "#414141";
       rotateButton.style.color = "white";
@@ -76,10 +76,26 @@ const LoadAsset = (game) => {
       rotateButton.className = "rotateButton";
       selectedAssetContainer.appendChild(rotateButton);
 
+      // append resize button
+      const resizeButton = document.createElement("div");
+      resizeButton.innerHTML = "&#8690;"; // Unicode for '↘'
+      resizeButton.style.position = "absolute";
+      resizeButton.style.bottom = "0px";
+      resizeButton.style.right = "0px";
+      resizeButton.style.cursor = "se-resize";
+      resizeButton.style.backgroundColor = "#414141";
+      resizeButton.style.color = "white";
+      resizeButton.style.borderRadius = "50%";
+      resizeButton.style.width = "18px";
+      resizeButton.style.height = "18px";
+      resizeButton.style.display = "flex";
+      resizeButton.style.justifyContent = "center";
+      resizeButton.style.alignItems = "center";
+      resizeButton.className = "resizeButton";
+      selectedAssetContainer.appendChild(resizeButton);
+
       // Append the new container to the parent div
-      console.log(editscreen)
-      console.log(selectedAssetContainer)
-      editscreen.appendChild(selectedAssetContainer);
+      editscreen.appendChild(selectedAssetContainer)
 
       const removeContainer = () => {
         console.log("removed");
@@ -134,6 +150,13 @@ const LoadAsset = (game) => {
       selectedAssetContainer.addEventListener("mousemove", (event) => drag(event, selectedAssetContainer));
       selectedAssetContainer.addEventListener("touchend", (event) => endDrag(event, selectedAssetContainer));
       selectedAssetContainer.addEventListener("mouseup", (event) => endDrag(event, selectedAssetContainer));
+
+      resizeButton.addEventListener("mousedown", (event) => startResize(event, selectedAssetContainer , clonedAsset));
+      resizeButton.addEventListener("touchstart", (event) => startResize(event, selectedAssetContainer , clonedAsset));
+      document.addEventListener("mousemove", (event) => resize(event, selectedAssetContainer , clonedAsset));
+      document.addEventListener("touchmove", (event) => resize(event, selectedAssetContainer , clonedAsset));
+      document.addEventListener("mouseup", (event) => endResize(event, selectedAssetContainer , clonedAsset));
+      document.addEventListener("touchend", (event) => endResize(event, selectedAssetContainer , clonedAsset));
     });
 
     function startDrag(event, container) {
@@ -191,9 +214,54 @@ const LoadAsset = (game) => {
       event.preventDefault();
       container.dragging = false;
     }
+
+    let initialWidth, initialHeight, initialMouseX, initialMouseY;
+
+    function startResize(event, container, clonedAsset) {
+      event.preventDefault();
+      if (event.type === "touchstart") {
+        const touch = event.touches[0];
+        initialMouseX = touch.clientX;
+        initialMouseY = touch.clientY;
+      } else {
+        initialMouseX = event.clientX;
+        initialMouseY = event.clientY;
+      }
+      initialWidth = parseFloat(getComputedStyle(clonedAsset, null).getPropertyValue("width").replace("px", ""));
+      initialHeight = parseFloat(getComputedStyle(clonedAsset, null).getPropertyValue("height").replace("px", ""));
+      container.initialWidth = parseFloat(getComputedStyle(container, null).getPropertyValue("width").replace("px", ""));
+      container.initialHeight = parseFloat(getComputedStyle(container, null).getPropertyValue("height").replace("px", ""));
+      container.resizing = true;
+    }
+    
+    function resize(event, container, clonedAsset) {
+      
+      if (container.resizing) {
+        let clientX, clientY;
+        if (event.type === "touchmove") {
+          const touch = event.touches[0];
+          clientX = touch.clientX;
+          clientY = touch.clientY;
+        } else {
+          clientX = event.clientX;
+          clientY = event.clientY;
+        }
+        const widthChange = clientX - initialMouseX;
+        const heightChange = clientY - initialMouseY;
+        clonedAsset.style.width = initialWidth + widthChange + "px";
+        clonedAsset.style.height = initialHeight + heightChange + "px";
+        container.style.width = container.initialWidth + widthChange + "px";
+        container.style.height = container.initialHeight + heightChange + "px";
+      }
+    }
+    
+    function endResize(event, container) {
+      event.preventDefault();
+      container.resizing = false;
+    }
   });
 
-  return selectedgameasset;
+  return selectedgameasset ;
 };
 
 

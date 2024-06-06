@@ -1,4 +1,4 @@
-const GameassetPage = (game) => {
+const GameassetPage = (game , editscreen) => {
   const gameassetpage = document.createElement("div");
   gameassetpage.className = "gameassetpage";
 
@@ -13,7 +13,7 @@ const GameassetPage = (game) => {
 
   searchdiv.appendChild(inputbar);
   gameassetpage.appendChild(searchdiv);
-  gameassetpage.appendChild(LoadAsset(game));
+  gameassetpage.appendChild(LoadAsset(game , editscreen));
 
   // Initialize height
   gameassetpage.style.height = "20%";
@@ -22,6 +22,14 @@ const GameassetPage = (game) => {
   let isDragging = false;
   let startY;
   let startHeight;
+
+
+  // Prevent default scrolling behavior during dragging
+  const preventScroll = (e) => {
+    if (isDragging) {
+      e.preventDefault();
+    }
+  };
 
   // Mouse and touch events
   gameassetpage.addEventListener('mousedown', (e) => {

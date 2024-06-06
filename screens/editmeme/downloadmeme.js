@@ -9,11 +9,28 @@ const createAndDownloadMeme = (memeTemplateUrl) => {
     
   
     img.onload = () => {
-        canvas.width = memeRect.width;
-        canvas.height = memeRect.height;
+
+
+        const aspectRatio = img.width / img.height;
+        const containerAspectRatio = memeRect.width / memeRect.height;
+
+        let drawWidth, drawHeight;
+        if (aspectRatio > containerAspectRatio) {
+            // Image is wider than container
+            drawWidth = memeRect.width;
+            drawHeight = memeRect.width / aspectRatio;
+        } else {
+            // Image is taller than container
+            drawWidth = memeRect.height * aspectRatio;
+            drawHeight = memeRect.height;
+        }
+
+
+        canvas.width = drawWidth;
+        canvas.height = drawHeight;
         ctx.drawImage(img, 0, 0,
-          memeRect.width,
-          memeRect.height
+            drawWidth,
+            drawHeight
         );
   
         
@@ -25,9 +42,13 @@ const createAndDownloadMeme = (memeTemplateUrl) => {
         const color = window.getComputedStyle(liveTextDiv, null).getPropertyValue("color");
         const boundingRect = liveTextDiv.getBoundingClientRect();
        
+
+        // Calculate the scaling factors
+        const scaleX = drawWidth / memeRect.width;
+        const scaleY = drawHeight / memeRect.height;
   
-        const relativeLeft = boundingRect.left - memeRect.left;
-        const relativeTop = boundingRect.top - memeRect.top;
+        const relativeLeft = (boundingRect.left - memeRect.left) * scaleX;
+        const relativeTop = (boundingRect.top - memeRect.top) * scaleY;
   
   
         // Set font size and color
@@ -44,12 +65,17 @@ const createAndDownloadMeme = (memeTemplateUrl) => {
    const loadAssetImage = (element) => {
     return new Promise((resolve) => {
       const assetImg = new Image();
-      assetImg.crossOrigin = "anonymous"; // Add this line
+      assetImg.crossOrigin = "anonymous"; 
       assetImg.src = element.src;
       assetImg.onload = () => {
         const assetRect = element.getBoundingClientRect();
-        const relativeLeft = assetRect.left - memeRect.left;
-        const relativeTop = assetRect.top - memeRect.top;
+
+        // Calculate the scaling factors
+                    const scaleX = drawWidth / memeRect.width;
+                    const scaleY = drawHeight / memeRect.height;
+                    
+                    const relativeLeft = (assetRect.left - memeRect.left) * scaleX;
+                    const relativeTop = (assetRect.top - memeRect.top) * scaleY;
 
         // Apply rotation if needed
         const currentRotation = element.style.transform.match(/rotate\((\d+)deg\)/);

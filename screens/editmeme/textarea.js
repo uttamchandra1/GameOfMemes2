@@ -10,6 +10,8 @@ const TextArea = (onDone) => {
   liveTextDiv.style.top = "187px";
   liveTextDiv.style.left = "69px";
   liveTextDiv.style.whiteSpace = "pre-wrap"; // Maintain whitespace and line breaks
+
+ 
   
 
   

@@ -175,6 +175,9 @@ margin-left: 145px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 8px;
+    box-shadow: -2px -6px 9px 1px rgba(0,0,0,0.75);
+
     border-top: 1px solid #0000001F;
     padding-top: 16px;
 

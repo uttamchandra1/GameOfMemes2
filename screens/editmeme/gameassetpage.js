@@ -13,7 +13,7 @@ const GameassetPage = (game , editscreen) => {
 
   searchdiv.appendChild(inputbar);
   gameassetpage.appendChild(searchdiv);
-  gameassetpage.appendChild(LoadAsset(game , editscreen));
+  gameassetpage.appendChild(LoadAsset(game , editscreen , gameassetpage));
 
   // Initialize height
   gameassetpage.style.height = "20%";

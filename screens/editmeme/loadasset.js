@@ -1,6 +1,7 @@
 let selectedassets = [];
 
-const LoadAsset = (game , editscreen) => {
+
+const LoadAsset = (game , editscreen , gameassetpage) => {
   const selectedgameasset = document.createElement("div");
 
   selectedgameasset.className = "loadasset";
@@ -97,6 +98,7 @@ const LoadAsset = (game , editscreen) => {
       // Append the new container to the parent div
       editscreen.appendChild(selectedAssetContainer)
 
+      gameassetpage.style.height = "20%";
       const removeContainer = () => {
         console.log("removed");
         selectedAssetContainer.remove(); // Remove the container div

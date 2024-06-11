@@ -18,7 +18,7 @@ const GameassetPage = (game , editscreen) => {
   // Initialize height
   gameassetpage.style.height = "20%";
   gameassetpage.style.maxHeight = "40%";
-  gameassetpage.style.minHeight = "10%";
+  gameassetpage.style.minHeight = "5%";
 
 
 

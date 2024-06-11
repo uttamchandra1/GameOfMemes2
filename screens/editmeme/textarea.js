@@ -1,4 +1,4 @@
-const TextArea = (onDone , button) => {
+const TextArea = (onDone) => {
   const textdiv = document.createElement("div");
   textdiv.className = "textdiv";
 
@@ -167,8 +167,10 @@ const TextArea = (onDone , button) => {
     textarea.style.display = "block";
     settings.style.display = "flex";
     textarea.focus();
-    button.style.display = "none"
+    
   }
+
+  
 
   // Handle edit button click to show textarea and settings
   editButton.addEventListener("click", editText);
@@ -203,6 +205,7 @@ const TextArea = (onDone , button) => {
       resizeButton.style.display = "none";
       containerDiv.classList.remove("selected");
       liveTextDiv.style.border = "none"
+
     }
   });
 

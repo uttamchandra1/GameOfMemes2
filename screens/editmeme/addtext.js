@@ -11,7 +11,7 @@ const AddText = () => {
     button.addEventListener("click" , () => {
         console.log("clicked");
         
-        addtextdiv.appendChild(TextArea(() => {
+        addtextdiv.appendChild(TextArea((button) => {
             
             button.style.display = "block"
         }));

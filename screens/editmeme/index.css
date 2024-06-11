@@ -163,12 +163,14 @@ margin-left: 145px;
 
 
 .liveTextDiv {
-
     width: 193px;
     height: 66px;
-    resize: both;
-    overflow: auto;
 }
+
+.containerDiv{
+    padding: 14px;
+}
+
 
 .gameassetpage {
 

@@ -20,6 +20,21 @@ const GameassetPage = (game, editscreen) => {
     gameassetpage.style.minHeight = "5%";
     gameassetpage.style.overflowY = "auto"; // Ensure the content can scroll if it overflows
   
+    // Create draggable handle
+    const dragHandle = document.createElement("div");
+    dragHandle.className = "drag-handle";
+    dragHandle.style.width = "64px";
+    dragHandle.style.height = "4px";
+    dragHandle.style.position = "absolute";
+    dragHandle.style.top = "8px";
+    dragHandle.style.left = "calc(50% - 32px)";
+    dragHandle.style.backgroundColor = "#3B5C6B"; // visible handle for better user experience
+    dragHandle.style.borderRadius = "2px";
+    dragHandle.style.opacity = "0.5"; // slightly visible for user to know where to drag
+    dragHandle.style.cursor = "ns-resize"; // indicate resize capability
+  
+    gameassetpage.appendChild(dragHandle);
+  
     // Variables to handle dragging
     let isDragging = false;
     let startY;
@@ -33,36 +48,30 @@ const GameassetPage = (game, editscreen) => {
     };
   
     // Mouse events
-    gameassetpage.addEventListener("mousedown", (e) => {
-      if (e.target === inputbar || e.target.closest(".searchdiv")) return; // Ignore dragging on the search bar
+    dragHandle.addEventListener("mousedown", (e) => {
       isDragging = true;
       startY = e.clientY;
       startHeight = parseInt(window.getComputedStyle(gameassetpage).height, 10);
     });
   
-    document.addEventListener("mousemove", (e) => {
+    dragHandle.addEventListener("mousemove", (e) => {
       if (!isDragging) return;
       const diffY = startY - e.clientY;
       gameassetpage.style.height = `${startHeight + diffY}px`;
     });
   
-    document.addEventListener("mouseup", () => {
+    dragHandle.addEventListener("mouseup", () => {
       isDragging = false;
     });
   
     // Touch events
-    gameassetpage.addEventListener("touchstart", (e) => {
-      if (e.target === inputbar || e.target.closest(".searchdiv")) return; // Ignore dragging on the search bar
-      const touchY = e.touches[0].clientY;
-      const rect = gameassetpage.getBoundingClientRect();
-      if (touchY < rect.top + 10 || touchY > rect.bottom - 10) {
-        isDragging = true;
-        startY = touchY;
-        startHeight = parseInt(window.getComputedStyle(gameassetpage).height, 10);
-      }
+    dragHandle.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      startY = e.touches[0].clientY;
+      startHeight = parseInt(window.getComputedStyle(gameassetpage).height, 10);
     });
   
-    gameassetpage.addEventListener(
+    dragHandle.addEventListener(
       "touchmove",
       (e) => {
         if (!isDragging) return;
@@ -73,10 +82,9 @@ const GameassetPage = (game, editscreen) => {
       { passive: false }
     );
   
-    gameassetpage.addEventListener("touchend", () => {
+    dragHandle.addEventListener("touchend", () => {
       isDragging = false;
     });
   
     return gameassetpage;
   };
-  

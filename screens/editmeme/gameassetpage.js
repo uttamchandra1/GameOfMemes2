@@ -62,7 +62,7 @@ const GameassetPage = (game, editscreen) => {
       }
     });
   
-    document.addEventListener(
+    gameassetpage.addEventListener(
       "touchmove",
       (e) => {
         if (!isDragging) return;
@@ -73,7 +73,7 @@ const GameassetPage = (game, editscreen) => {
       { passive: false }
     );
   
-    document.addEventListener("touchend", () => {
+    gameassetpage.addEventListener("touchend", () => {
       isDragging = false;
     });
   

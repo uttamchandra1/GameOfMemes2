@@ -19,6 +19,8 @@ const GameassetPage = (game , editscreen) => {
   gameassetpage.style.height = "20%";
   gameassetpage.style.maxHeight = "40%";
   gameassetpage.style.minHeight = "5%";
+  gameassetpage.style.overflowY = "auto"; // Ensure the content can scroll if it overflows
+
 
 
 

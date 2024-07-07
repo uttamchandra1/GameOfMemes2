@@ -19,12 +19,17 @@ const PopularMeme = (game) => {
             const memeTemplateImage = document.createElement("div");
             memeTemplateImage.classList.add("meme-image-div");
 
+            const eye = document.createElement("img");
+            eye.className = "eye"
+            eye.src = "./assets/eye.png";
+
             // img element with Base64 source
             const memeImage = document.createElement("img");
             memeImage.src = base64;
             memeImage.alt = meme.name;
             memeImage.classList.add("meme-template-image");
             memeTemplateImage.appendChild(memeImage);
+            memeTemplateElement.appendChild(eye);
             memeTemplateElement.appendChild(memeTemplateImage);
 
             const buttonDiv = document.createElement("div");
@@ -32,8 +37,7 @@ const PopularMeme = (game) => {
             const addCaptionButton = document.createElement("button");
             addCaptionButton.innerText = meme.name;
 
-            const image = document.createElement("img");
-            image.src = "./assets/Icon.png";
+           
 
             buttonDiv.addEventListener("click", () => {
               if (!game) { // Check if the game is not selected
@@ -46,7 +50,7 @@ const PopularMeme = (game) => {
             });
 
             buttonDiv.appendChild(addCaptionButton);
-            buttonDiv.appendChild(image);
+            
             memeTemplateElement.appendChild(buttonDiv);
 
             memeTemplateContainer.appendChild(memeTemplateElement);

@@ -20,7 +20,7 @@ const  GameList = (memeTemplateUrl) => {
       
         gameDiv.addEventListener("click" , () => {
       
-          if (memeTemplateUrl) { // Check if a meme template is already selected
+          if (memeTemplateUrl) {
             console.log("Meme template already selected, opening meme edit screen");
             changeScreen(Meme_Edit_Screen(memeTemplateUrl, game));
           } else {

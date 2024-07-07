@@ -8,11 +8,11 @@ const GameMeme = (game) => {
 
     const backimg = document.createElement("img");
     backimg.className = 'backimg';
-    backimg.src = "./assets/back.png";
+    backimg.src = "./assets/back2.png";
 
     const backtext = document.createElement("p")
     backtext.className = "backtext";
-    backtext.innerText = "Meme templates for"
+    backtext.innerText = "Meme Templates "
 
 
     backfloww.appendChild(backimg);
@@ -23,7 +23,7 @@ const GameMeme = (game) => {
     })
 
     gamememe.appendChild(backfloww);
-    gamememe.appendChild(SelectedGame(game));
+   // gamememe.appendChild(SelectedGame(game));
 
 
     return gamememe;

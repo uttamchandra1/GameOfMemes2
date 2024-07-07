@@ -1,4 +1,4 @@
-const SelectedGame = (game) => {
+/* const SelectedGame = (game) => {
 
     const selectedgame = document.createElement("div");
     selectedgame.className = "selectedgame"
@@ -20,3 +20,5 @@ const SelectedGame = (game) => {
 
     return selectedgame;
 }
+
+*/

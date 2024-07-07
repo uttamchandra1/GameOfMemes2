@@ -2,6 +2,10 @@ const Buttons = () => {
   const DynammicDiv = document.createElement("div");
   DynammicDiv.className = "DynammicDiv";
 
+  const Heading = document.createElement("a");
+  Heading.className="heading";
+  Heading.innerText= "Find the template for your meme"
+
   const ButtonDiv = document.createElement("div");
   ButtonDiv.className = "ButtonDiv";
 
@@ -17,7 +21,7 @@ const Buttons = () => {
 
   const GameWise = document.createElement("button");
   GameWise.className = "GameWise-Button";
-  GameWise.innerHTML = "GameWise";
+  GameWise.innerHTML = "Game Wise";
 
   function hideGameList() {
     Gamelist.style.display = "none";
@@ -51,6 +55,8 @@ const Buttons = () => {
 
   
 
+
+  DynammicDiv.appendChild(Heading);
   ButtonDiv.appendChild(PopularButton);
   ButtonDiv.appendChild(GameWise);
   DynammicDiv.appendChild(ButtonDiv);

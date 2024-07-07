@@ -5,7 +5,7 @@ const Logo_Container = () => {
 
     const image = document.createElement("img");
     image.className= "logo-img"
-    image.src = "./assets/gamelogo.png"
+    image.src = "./assets/newgamelogo.png"
     image.alt = "logo"
 
     logo_container.appendChild(image)

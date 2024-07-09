@@ -1,43 +1,47 @@
 const Backflow = (memeTemplateUrl) => {
-    const backflow = document.createElement("div")
-    backflow.className = "backflow"
+  const backflow = document.createElement("div");
+  backflow.className = "backflow";
 
-    const backdiv = document.createElement("div");
-    backdiv.className = "backdiv"
+  const backdiv = document.createElement("div");
+  backdiv.className = "backdiv";
 
-    const sharebutton = document.createElement("button");
-    sharebutton.innerText = "Share"
-    sharebutton.className = "sharebutton"
+ /*  const sharebutton = document.createElement("button");
+  sharebutton.innerText = "Share";
+  sharebutton.className = "sharebutton";
 
-    const shareimg = document.createElement("img")
-    shareimg.src = "./assets/share.png";
-    shareimg.alt = "share";
-    shareimg.className = "shareimg";
+  const shareimg = document.createElement("img");
+  shareimg.src = "./assets/share.png";
+  shareimg.alt = "share";
+  shareimg.className = "shareimg";
 
+  //sharebutton.addEventListener("click", () => {
+   // createAndDownloadMeme(memeTemplateUrl);
+ // });
 
-    sharebutton.addEventListener("click", () => {
-        createAndDownloadMeme(memeTemplateUrl);
-    });
+ */
 
-    const backimg = document.createElement("img");
-    backimg.className = 'backimg';
-    backimg.src = "./assets/back.png";
+  const crossbutton = document.createElement("button");
+  crossbutton.className = "crossButton";
 
-    const backtext = document.createElement("p")
-    backtext.className = "backtext";
-    backtext.innerText = "Start your magic"
+  const crossimg = document.createElement("img");
+  crossimg.className = "crossimg";
+  crossimg.src = "./assets/cross1.png";
 
-    backimg.addEventListener("click" , () => {
-        changeScreen(Home_Screen())
-    })
+  //crossbutton.appendChild(crossimg);
 
-    sharebutton.appendChild(shareimg);
-    backdiv.appendChild(backimg);
-    backdiv.appendChild(backtext);
-    backflow.appendChild(backdiv);
-    backflow.appendChild(sharebutton);
+  const backtext = document.createElement("p");
+  backtext.className = "backtext";
+  backtext.innerText = "Start your magic";
 
-    return backflow;
-}
+  crossimg.addEventListener("click", () => {
+    changeScreen(Home_Screen());
+  });
 
+  sharebutton.appendChild(shareimg);
+  backdiv.appendChild(crossimg);
+  backdiv.appendChild(backtext);
+  backflow.appendChild(backdiv);
+  backflow.appendChild(sharebutton);
 
+  return backflow;
+};

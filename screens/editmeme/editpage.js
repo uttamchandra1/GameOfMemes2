@@ -4,10 +4,19 @@ const Meme_Edit_Screen = (memeTemplateUrl , game) => {
     editscreen.className = "editscreen";
     editscreen.classList = "editscreen";
 
+    const edittools = document.createElement("div");
+    edittools.className="edittools";
+
+
+
+
     editscreen.appendChild(Backflow(memeTemplateUrl))
-    editscreen.appendChild(Selected_Meme(memeTemplateUrl));
-    editscreen.appendChild(AddText());
-    editscreen.appendChild(GameassetPage(game , editscreen));
+    edittools.appendChild(Selected_Meme(memeTemplateUrl))
+    edittools.appendChild(AddText())
+    edittools.appendChild(GameassetPage(game , editscreen))
+   // editscreen.appendChild();
+    editscreen.appendChild(edittools);
+    
 
 
 

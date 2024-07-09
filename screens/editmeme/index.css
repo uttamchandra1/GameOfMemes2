@@ -2,27 +2,45 @@
     position: relative;
     z-index: 1; /* Ensure it is above the overlay */
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-items:center ;
+    align-items: center;
+    width: 360px;
   }
+
 
 .backflow {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 336px;
+    width: 360px;
+    height: 63px;
+    background-color: #F4ECFF;
 
 }
+
+  
+  .crossimg {
+    width: 43px;  
+    height: 43px;
+     
+  }
+
 
 .backdiv {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 12px;
+    
 }
 
 .memecontainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 370px;
+    width: 360px;
+    height: 507px;
 
 }
 
@@ -53,7 +71,7 @@
     margin-top: 20px;
 }
 
-.sharebutton {
+/* .sharebutton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,6 +86,7 @@
     font-family: "Montserrat"  , sans-serif;
 
 }
+*/
 
 .textarea {
 
@@ -187,7 +206,7 @@ margin-left: 145px;
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 10000; /* Ensure it is below other elements with higher z-index */
+  z-index: 10000; 
   background-color: #D6D1CC;
     
 }
@@ -210,3 +229,9 @@ margin-left: 145px;
     grid-template-columns: auto auto auto auto;
     gap: 12px;
 }
+
+
+.edittools{
+    width: 360px;
+}
+

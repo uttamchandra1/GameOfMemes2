@@ -37,11 +37,11 @@ const Backflow = (memeTemplateUrl) => {
     changeScreen(Home_Screen());
   });
 
-  sharebutton.appendChild(shareimg);
+  //sharebutton.appendChild(shareimg);
   backdiv.appendChild(crossimg);
   backdiv.appendChild(backtext);
   backflow.appendChild(backdiv);
-  backflow.appendChild(sharebutton);
+  //backflow.appendChild(sharebutton);
 
   return backflow;
 };

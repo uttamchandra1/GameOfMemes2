@@ -44,7 +44,7 @@ const PopularMeme = (game) => {
                 console.log("No game selected, opening game selection page");
                 changeScreen(GameSelection_Page(meme , base64));
             } else {
-                changeScreen(Meme_Edit_Screen(base64, game));
+                changeScreen(Start_Edit_Screen(base64, game));
             }
               
             });

@@ -25,13 +25,13 @@ const Backflow = (memeTemplateUrl) => {
 
   const crossimg = document.createElement("img");
   crossimg.className = "crossimg";
-  crossimg.src = "./assets/cross1.png";
+  crossimg.src = "./assets/cross4.svg";
 
   //crossbutton.appendChild(crossimg);
 
   const backtext = document.createElement("p");
   backtext.className = "backtext";
-  backtext.innerText = "Start your magic";
+  backtext.innerText = "Two Buttons";
 
   crossimg.addEventListener("click", () => {
     changeScreen(Home_Screen());

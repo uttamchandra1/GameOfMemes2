@@ -8,7 +8,7 @@ const GameMeme = (game) => {
 
     const backimg = document.createElement("img");
     backimg.className = 'backimg';
-    backimg.src = "./assets/back2.png";
+    backimg.src = "./assets/back1.svg";
 
     const backtext = document.createElement("p")
     backtext.className = "backtext";

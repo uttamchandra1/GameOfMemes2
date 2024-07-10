@@ -18,6 +18,7 @@ const jsFiles = [
     "./screens/editmeme/gameasset.js",
     "./screens/editmeme/loadasset.js",
     "./screens/editmeme/gameassetpage.js",
+    "./screens/editmeme/startEditingpage.js",
    
     "./screens/gameselection/gameselect.js",
     "./screens/gameselection/gameformeme.js",

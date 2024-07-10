@@ -26,6 +26,27 @@
      
   }
 
+  .starteditbutton{
+    background-image: url('../../assets/startedit1.svg'); /* Path to your SVG file */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+    background-size: contain; /* Make sure the image fits within the button */
+    border: none;
+    text-align: center;
+    padding: 0;
+    display: inline-block;
+
+    width: 336px;
+    height: 55px;
+      }
+
+  .starteditbuttondiv{
+    width: 360px;
+    height: 103px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 .backdiv {
     display: flex;

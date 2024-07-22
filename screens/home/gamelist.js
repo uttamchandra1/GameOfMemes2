@@ -22,7 +22,7 @@ const  GameList = (memeTemplateUrl) => {
       
           if (memeTemplateUrl) {
             console.log("Meme template already selected, opening meme edit screen");
-            changeScreen(Meme_Edit_Screen(memeTemplateUrl, game));
+            changeScreen(Start_Edit_Screen(memeTemplateUrl, game));
           } else {
             console.log("No meme template selected, opening meme page screen");
             changeScreen(Meme_Page_Screen(game));

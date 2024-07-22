@@ -8,36 +8,37 @@ const TextArea = (onDone) => {
   containerDiv.style.position = "absolute";
   containerDiv.style.top = "187px";
   containerDiv.style.left = "69px";
-  
 
   // Create a div to display the live text
   const liveTextDiv = document.createElement("div");
   liveTextDiv.className = "liveTextDiv";
-  liveTextDiv.style.position = "relative"; // Changed to relative for new container
-  liveTextDiv.style.whiteSpace = "pre-wrap"; // Maintain whitespace and line breaks
+  liveTextDiv.style.position = "relative";
+  liveTextDiv.style.whiteSpace = "pre-wrap";
   liveTextDiv.style.overflowWrap = "break-word";
-  liveTextDiv.style.border = "1px solid black";  // Maintain whitespace and line breaks
+  liveTextDiv.style.border = "1px solid black";
   liveTextDiv.style.borderStyle = "dashed";
+  liveTextDiv.style.padding = "10px";
+  liveTextDiv.contentEditable = true;
 
   // Create an edit button element
   const editButton = document.createElement("button");
   editButton.innerHTML = "&#9998;";
   editButton.style.position = "absolute";
   editButton.style.top = "0";
-      editButton.style.right = "0";
-      editButton.style.cursor = "pointer";
-      editButton.style.backgroundColor = "#414141";
-      editButton.style.color = "white";
-      editButton.style.borderRadius = "50%";
-      editButton.style.width = "18px";
-      editButton.style.height = "18px";
-      editButton.style.display = "flex";
-      editButton.style.justifyContent = "center";
-      editButton.style.alignItems = "center";
+  editButton.style.right = "0";
+  editButton.style.cursor = "pointer";
+  editButton.style.backgroundColor = "#414141";
+  editButton.style.color = "white";
+  editButton.style.borderRadius = "50%";
+  editButton.style.width = "18px";
+  editButton.style.height = "18px";
+  editButton.style.display = "none";
+  editButton.style.justifyContent = "center";
+  editButton.style.alignItems = "center";
 
   // Create a resize button element
   const resizeButton = document.createElement("button");
-  resizeButton.innerHTML = "&#8690;"; // Unicode for '↘'
+  resizeButton.innerHTML = "&#8690;";
   resizeButton.style.position = "absolute";
   resizeButton.style.bottom = "0px";
   resizeButton.style.right = "0px";
@@ -47,22 +48,11 @@ const TextArea = (onDone) => {
   resizeButton.style.borderRadius = "50%";
   resizeButton.style.width = "18px";
   resizeButton.style.height = "18px";
-  resizeButton.style.display = "flex";
+  resizeButton.style.display = "none";
   resizeButton.style.justifyContent = "center";
   resizeButton.style.alignItems = "center";
   resizeButton.className = "resizeButton";
 
-  // Create a text area element
-  const textarea = document.createElement("textarea");
-  textarea.className = "textarea";
-  textarea.rows = 3;
-  textarea.cols = 30;
-
-  // Create a span to hold the text content
-  const textContentSpan = document.createElement("span");
-  textContentSpan.className = "textContentSpan";
-
-  liveTextDiv.appendChild(textContentSpan);
   containerDiv.appendChild(editButton);
   containerDiv.appendChild(resizeButton);
   containerDiv.appendChild(liveTextDiv);
@@ -70,13 +60,9 @@ const TextArea = (onDone) => {
   // Append the container div to textdiv
   textdiv.appendChild(containerDiv);
 
-  // Update live text as the user types
-  textarea.addEventListener("input", () => {
-    textContentSpan.textContent = textarea.value;
-  });
-
   const settings = document.createElement("div");
   settings.className = "settings";
+  settings.style.display = "none";
 
   const textSize = document.createElement("div");
   textSize.className = "textSize";
@@ -121,7 +107,6 @@ const TextArea = (onDone) => {
   settings.appendChild(textSize);
   settings.appendChild(colorPicker);
   settings.appendChild(donebutton);
-  textdiv.appendChild(textarea);
   textdiv.appendChild(settings);
 
   // Handle text size increase
@@ -144,35 +129,31 @@ const TextArea = (onDone) => {
   blackcolor.addEventListener("click", () => {
     liveTextDiv.style.color = "black";
     blackcolor.style.border = "2.67px solid #E97B31";
-    whitecolor.style.border = "1px solid black"; // Reset white color border
+    whitecolor.style.border = "1px solid black";
   });
 
   // Handle text color change to white
   whitecolor.addEventListener("click", () => {
     liveTextDiv.style.color = "white";
     whitecolor.style.border = "2.67px solid #E97B31";
-    blackcolor.style.border = "none"; // Reset black color border
+    blackcolor.style.border = "none";
   });
 
   donebutton.addEventListener("click", () => {
-    textarea.style.display = "none";
     settings.style.display = "none";
+    liveTextDiv.contentEditable = false;
     if (onDone) {
-      onDone(); // Call the callback to show the "Add Text" button again
+      onDone();
     }
   });
 
   const editText = () => {
-    console.log("clicked edit text");
-    textarea.style.display = "block";
     settings.style.display = "flex";
-    textarea.focus();
-    
+    liveTextDiv.contentEditable = true;
+    liveTextDiv.focus();
   }
 
-  
-
-  // Handle edit button click to show textarea and settings
+  // Handle edit button click to show settings
   editButton.addEventListener("click", editText);
   editButton.addEventListener("touchstart", editText);
 
@@ -185,10 +166,9 @@ const TextArea = (onDone) => {
   liveTextDiv.addEventListener("touchend", () => {
     editButton.style.display = "flex";
     resizeButton.style.display = "flex";
-    liveTextDiv.style.border = "1px solid black"
+    liveTextDiv.style.border = "1px solid black";
     liveTextDiv.style.borderStyle = "dashed";
     containerDiv.classList.add("selected");
-
   });
 
   document.addEventListener("click", (event) => {
@@ -204,11 +184,9 @@ const TextArea = (onDone) => {
       editButton.style.display = "none";
       resizeButton.style.display = "none";
       containerDiv.classList.remove("selected");
-      liveTextDiv.style.border = "none"
-
+      liveTextDiv.style.border = "none";
     }
   });
-
 
   containerDiv.addEventListener("touchstart", (event) => startDrag(event, containerDiv));
   containerDiv.addEventListener("mousedown", (event) => startDrag(event, containerDiv));
@@ -228,12 +206,10 @@ const TextArea = (onDone) => {
     event.preventDefault();
     if (isCursorInCenter(event, container)) {
       if (event.type === "touchstart") {
-        // For touch events
         const touch = event.touches[0];
         initialX = touch.clientX - container.getBoundingClientRect().left;
         initialY = touch.clientY - container.getBoundingClientRect().top;
       } else {
-        // For mouse events
         initialX = event.clientX - container.getBoundingClientRect().left;
         initialY = event.clientY - container.getBoundingClientRect().top;
       }
@@ -259,12 +235,10 @@ const TextArea = (onDone) => {
     if (container.dragging) {
       let clientX, clientY;
       if (event.type === "touchmove") {
-        // For touch events
         const touch = event.touches[0];
         clientX = touch.clientX;
         clientY = touch.clientY;
       } else {
-        // For mouse events
         clientX = event.clientX;
         clientY = event.clientY;
       }

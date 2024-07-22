@@ -15,7 +15,7 @@ const GameassetPage = (game, editscreen) => {
     gameassetpage.appendChild(LoadAsset(game, editscreen, gameassetpage));
   
     // Initialize height
-    gameassetpage.style.height = "20%";
+    gameassetpage.style.height = "182px";
     gameassetpage.style.maxHeight = "40%";
     gameassetpage.style.minHeight = "5%";
     gameassetpage.style.overflowY = "auto"; // Ensure the content can scroll if it overflows

@@ -25,7 +25,7 @@ const Backflow = (memeTemplateUrl) => {
 
   const crossimg = document.createElement("img");
   crossimg.className = "crossimg";
-  crossimg.src = "./assets/cross4.svg";
+  crossimg.src = "./assets/back1.svg";
 
   //crossbutton.appendChild(crossimg);
 

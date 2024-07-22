@@ -10,23 +10,25 @@ const GameForMeme = (meme , memeTemplateUrl) => {
     const lowerdiv = document.createElement("div");
     lowerdiv.className = "lowerdiv";
 
+     /*
     const selectedmeme = document.createElement("img");
     selectedmeme.className = "selectedmeme";
     selectedmeme.src = memeTemplateUrl;
     selectedmeme.alt = "memeTemplateUrl";
 
-    const selectedmemename = document.createElement("p");
+   const selectedmemename = document.createElement("p");
     selectedmemename.className = "selectedmemename";
     selectedmemename.innerText = meme.name;
+    */
 
 
     const backimg = document.createElement("img");
     backimg.className = 'backimg';
-    backimg.src = "./assets/back.png";
+    backimg.src = "./assets/back1.svg";
 
     const backtext = document.createElement("p")
     backtext.className = "backtext";
-    backtext.innerText = "Choose a game to use this template"
+    backtext.innerText = "Choose a Game for Template"
 
     backimg.addEventListener("click" , ()=> {
         changeScreen(Home_Screen())
@@ -35,8 +37,8 @@ const GameForMeme = (meme , memeTemplateUrl) => {
 
     upperdiv.appendChild(backimg);
     upperdiv.appendChild(backtext);
-    lowerdiv.appendChild(selectedmeme);
-    lowerdiv.appendChild(selectedmemename);
+    //lowerdiv.appendChild(selectedmeme);
+   // lowerdiv.appendChild(selectedmemename);
 
     gameformeme.appendChild(upperdiv);
     gameformeme.appendChild(lowerdiv);

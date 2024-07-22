@@ -12,7 +12,8 @@ const Meme_Edit_Screen = (memeTemplateUrl , game) => {
 
     editscreen.appendChild(Backflow(memeTemplateUrl))
     edittools.appendChild(Selected_Meme(memeTemplateUrl))
-   edittools.appendChild(AddText())
+   //edittools.appendChild(AddText())
+   edittools.appendChild(EditButtons())
    edittools.appendChild(GameassetPage(game , editscreen))
    // editscreen.appendChild();
     editscreen.appendChild(edittools);

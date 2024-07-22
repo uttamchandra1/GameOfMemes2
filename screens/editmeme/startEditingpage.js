@@ -16,6 +16,9 @@ const Start_Edit_Screen = (memeTemplateUrl , game) => {
    // startbuttonimg.src = "./assets/startedit1.svg";
     
 
+   starteditbutton.addEventListener("click" , () => {
+    changeScreen(Meme_Edit_Screen(memeTemplateUrl, game));
+   })
 
    startbuttondiv.appendChild(starteditbutton)
     //starteditbutton.appendChild(startbuttonimg);

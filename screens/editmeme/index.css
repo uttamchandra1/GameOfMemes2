@@ -71,7 +71,7 @@
   text-align: center;
   padding: 0;
   display: inline-block;
-  text-shadow: 1px 1px 0px #060000, 2px 2px 0px #080206;
+
   -webkit-text-stroke: 0.63px #060000;
   width: 116px;
   height: 42px;
@@ -82,7 +82,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FEFDFB;
+  color: #fefdfb;
 }
 .addmusicbutton {
   background-image: url("../../assets/addmusic.svg"); /* Path to your SVG file */
@@ -93,7 +93,6 @@
   text-align: center;
   padding: 0;
   display: inline-block;
-  text-shadow: 1px 1px 0px #060000, 2px 2px 0px #080206;
   -webkit-text-stroke: 0.63px #060000;
   width: 116px;
   height: 42px;
@@ -103,7 +102,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FEFDFB;
+  color: #fefdfb;
+  margin-left: 15px;
 }
 .backdiv {
   display: flex;
@@ -117,7 +117,16 @@
   justify-content: center;
   align-items: center;
   width: 360px;
+  height: 382px;
+}
+
+.memecontainerstart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 336px;
   height: 507px;
+  padding: 12px;
 }
 
 .memecontainer img {
@@ -148,7 +157,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4;
 }
 
 /* .sharebutton {
@@ -298,4 +306,34 @@
 
 .edittools {
   width: 360px;
+}
+
+.backflowdiv {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 336px;
+  height: 39px;
+  padding: 12px;
+}
+
+.crossbutton {
+  background-image: url("../../assets/cross4.svg"); /* Path to your SVG file */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center; /* Center the background image */
+  background-size: contain; /* Make sure the image fits within the button */
+  border: none;
+
+  width: 43px;
+  height: 39px;
+}
+
+.crosstext {
+  margin-left: 12px;
+  font-family: "Dela Gothic One" , sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: center;
+  color: #360076;
 }

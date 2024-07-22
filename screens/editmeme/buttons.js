@@ -22,7 +22,7 @@ const EditButtons = () => {
             
             addTextButton.style.display = "block"
         }));
-        addTextButton.style.display = "none"
+        
     });
 
 

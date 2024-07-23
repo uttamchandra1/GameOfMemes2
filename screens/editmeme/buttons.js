@@ -1,4 +1,4 @@
-const EditButtons = () => {
+const EditButtons = (edittools) => {
 
     const buttonsdiv = document.createElement("div");
     buttonsdiv.className="buttonsdiv"
@@ -18,7 +18,7 @@ const EditButtons = () => {
     addTextButton.addEventListener("click", function() {
         console.log("clicked");
         
-        addtextdiv.appendChild(TextArea(() => {
+        edittools.appendChild(TextArea(() => {
             
             addTextButton.style.display = "block"
         }));

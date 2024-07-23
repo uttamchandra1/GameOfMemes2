@@ -1,4 +1,4 @@
-const TextArea = (onDone) => {
+const TextArea = () => {
   const textdiv = document.createElement("div");
   textdiv.className = "textdiv";
 
@@ -95,9 +95,7 @@ const TextArea = (onDone) => {
   whitecolor.style.display = "inline-block";
   whitecolor.style.cursor = "pointer";
 
-  const donebutton = document.createElement("div");
-  donebutton.innerText = "Done";
-  donebutton.className = "donebutton";
+  
 
   // Append elements to their respective parents
   colorPicker.appendChild(blackcolor);
@@ -106,7 +104,7 @@ const TextArea = (onDone) => {
   textSize.appendChild(decreasebutton);
   settings.appendChild(textSize);
   settings.appendChild(colorPicker);
-  settings.appendChild(donebutton);
+ // settings.appendChild(donebutton);
   textdiv.appendChild(settings);
 
   // Handle text size increase
@@ -139,13 +137,7 @@ const TextArea = (onDone) => {
     blackcolor.style.border = "none";
   });
 
-  donebutton.addEventListener("click", () => {
-    settings.style.display = "none";
-    liveTextDiv.contentEditable = false;
-    if (onDone) {
-      onDone();
-    }
-  });
+  
 
   const editText = () => {
     settings.style.display = "flex";

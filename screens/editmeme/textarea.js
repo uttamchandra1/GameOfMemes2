@@ -1,4 +1,4 @@
-const TextArea = () => {
+const TextArea = (onDone) => {
   const textdiv = document.createElement("div");
   textdiv.className = "textdiv";
 
@@ -63,6 +63,13 @@ const TextArea = () => {
   const settings = document.createElement("div");
   settings.className = "settings";
   settings.style.display = "none";
+  settings.style.position = "fixed"; // Change to fixed
+  settings.style.left = "50%";
+  settings.style.transform = "translateX(-50%)";
+  settings.style.backgroundColor = "#f0f0f0"; // Background color for visibility
+  settings.style.padding = "10px";
+  settings.style.borderRadius = "8px";
+  settings.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
   const textSize = document.createElement("div");
   textSize.className = "textSize";
@@ -95,7 +102,16 @@ const TextArea = () => {
   whitecolor.style.display = "inline-block";
   whitecolor.style.cursor = "pointer";
 
-  
+  const donebutton = document.createElement("div");
+  donebutton.innerText = "Done";
+  donebutton.className = "donebutton";
+  donebutton.style.cursor = "pointer";
+  donebutton.style.marginTop = "10px";
+  donebutton.style.textAlign = "center";
+  donebutton.style.padding = "5px";
+  donebutton.style.backgroundColor = "#e97b31";
+  donebutton.style.color = "white";
+  donebutton.style.borderRadius = "4px";
 
   // Append elements to their respective parents
   colorPicker.appendChild(blackcolor);
@@ -104,7 +120,7 @@ const TextArea = () => {
   textSize.appendChild(decreasebutton);
   settings.appendChild(textSize);
   settings.appendChild(colorPicker);
- // settings.appendChild(donebutton);
+  settings.appendChild(donebutton);
   textdiv.appendChild(settings);
 
   // Handle text size increase
@@ -137,13 +153,19 @@ const TextArea = () => {
     blackcolor.style.border = "none";
   });
 
-  
+  donebutton.addEventListener("click", () => {
+    settings.style.display = "none";
+    liveTextDiv.contentEditable = false;
+    if (onDone) {
+      onDone();
+    }
+  });
 
   const editText = () => {
     settings.style.display = "flex";
     liveTextDiv.contentEditable = true;
     liveTextDiv.focus();
-  }
+  };
 
   // Handle edit button click to show settings
   editButton.addEventListener("click", editText);
@@ -289,6 +311,22 @@ const TextArea = () => {
     event.preventDefault();
     container.resizing = false;
   }
+
+  // Function to adjust settings position above the keyboard
+  function adjustSettingsPosition() {
+    const windowHeight = window.innerHeight;
+    const keyboardHeight = 300; // Assumed keyboard height
+    settings.style.bottom = keyboardHeight + "px";
+  }
+
+  // Add event listeners to adjust settings position on focus
+  liveTextDiv.addEventListener("focus", adjustSettingsPosition);
+  liveTextDiv.addEventListener("touchstart", adjustSettingsPosition);
+  
+  // Reset settings position when focus is lost
+  liveTextDiv.addEventListener("blur", () => {
+    settings.style.bottom = "auto";
+  });
 
   // Make the liveTextDiv focusable
   liveTextDiv.tabIndex = 0;

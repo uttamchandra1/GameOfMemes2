@@ -191,6 +191,7 @@
 
 .settings {
   display: flex;
+  position: fixed;
   width: 360px;
   height: 48px;
   bottom: 0;

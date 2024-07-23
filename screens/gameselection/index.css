@@ -1,7 +1,10 @@
 .gameformeme {
-    width: 334px;
-    height: 88px;
+    width: 336px;
+    height: 39px;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
 }
 .upperdiv{
     display: flex;
@@ -38,4 +41,5 @@
 
 .gamelistdiv {
     width: 334px;
+    margin-top: 16px;
 }

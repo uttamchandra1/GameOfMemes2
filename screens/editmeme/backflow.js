@@ -5,26 +5,38 @@ const Backflow = () => {
   const backdiv = document.createElement("div");
   backdiv.className = "backdiv";
 
+  const twobuttons = document.createElement("div");
+  twobuttons.className = "twobuttons"
+
+
   const backbutton = document.createElement("button");
   backbutton.className = "crossButton";
+
 
   const backimg = document.createElement("img");
   backimg.className = "crossimg";
   backimg.src = "./assets/back1.svg";
 
 
-  const backtext = document.createElement("p");
-  backtext.className = "backtext";
-  backtext.innerText = "Two Buttons";
 
   backimg.addEventListener("click", () => {
     changeScreen(Home_Screen());
   });
 
-  
+  const homebutton = document.createElement("button");
+  homebutton.className = "homebutton";
+
+  const sharebutton = document.createElement("button");
+  sharebutton.className = "sharebutton";
+
+
+  twobuttons.appendChild(homebutton);
+  twobuttons.appendChild(sharebutton);
+
   backdiv.appendChild(backimg);
-  backdiv.appendChild(backtext);
+  
   backflow.appendChild(backdiv);
+  backflow.appendChild(twobuttons);
 
 
   return backflow;

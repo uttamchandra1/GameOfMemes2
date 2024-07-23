@@ -7,20 +7,6 @@ const GameForMeme = (meme , memeTemplateUrl) => {
     const upperdiv = document.createElement("div");
     upperdiv.className = "upperdiv";
 
-    const lowerdiv = document.createElement("div");
-    lowerdiv.className = "lowerdiv";
-
-     /*
-    const selectedmeme = document.createElement("img");
-    selectedmeme.className = "selectedmeme";
-    selectedmeme.src = memeTemplateUrl;
-    selectedmeme.alt = "memeTemplateUrl";
-
-   const selectedmemename = document.createElement("p");
-    selectedmemename.className = "selectedmemename";
-    selectedmemename.innerText = meme.name;
-    */
-
 
     const backimg = document.createElement("img");
     backimg.className = 'backimg';
@@ -37,11 +23,7 @@ const GameForMeme = (meme , memeTemplateUrl) => {
 
     upperdiv.appendChild(backimg);
     upperdiv.appendChild(backtext);
-    //lowerdiv.appendChild(selectedmeme);
-   // lowerdiv.appendChild(selectedmemename);
-
     gameformeme.appendChild(upperdiv);
-    gameformeme.appendChild(lowerdiv);
 
 
 

@@ -10,7 +10,7 @@ const Buttons = () => {
   ButtonDiv.className = "ButtonDiv";
 
   const Gamelist = document.createElement("div");
-  Gamelist.className = "Gamelist";
+  Gamelist.className = "Gamelisthome";
 
   const Popularmeme = document.createElement("div");
   Popularmeme.className = "Popularmeme";

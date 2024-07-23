@@ -86,9 +86,12 @@ margin-top: 24px;
  .gamelist {
     display: grid;
     grid-template-columns: auto auto auto;
-    margin-top: 32px;
     grid-gap: 8px;
 
+}
+
+.Gamelisthome {
+    margin-top: 32px;
 }
   .game {
     height: 132px;

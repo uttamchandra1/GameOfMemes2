@@ -1,4 +1,4 @@
-const TextArea = (onDone) => {
+const TextArea = (onDone ) => {
   const textdiv = document.createElement("div");
   textdiv.className = "textdiv";
 
@@ -160,6 +160,7 @@ const TextArea = (onDone) => {
       onDone();
     }
   });
+
 
   const editText = () => {
     settings.style.display = "flex";

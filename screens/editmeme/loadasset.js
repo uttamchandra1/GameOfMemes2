@@ -98,7 +98,7 @@ const LoadAsset = (game , editscreen , gameassetpage) => {
       // Append the new container to the parent div
       editscreen.appendChild(selectedAssetContainer)
 
-      gameassetpage.style.height = "10%";
+     // gameassetpage.style.height = "10%";
       const removeContainer = () => {
         console.log("removed");
         selectedAssetContainer.remove(); // Remove the container div

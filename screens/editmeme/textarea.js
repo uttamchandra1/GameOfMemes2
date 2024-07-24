@@ -325,7 +325,7 @@ const TextArea = (onDone) => {
   
   // Reset settings position when focus is lost
   liveTextDiv.addEventListener("blur", () => {
-    settings.style.bottom = "auto";
+    settings.style.bottom = "0";
   });
 
   // Make the liveTextDiv focusable

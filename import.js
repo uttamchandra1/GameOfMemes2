@@ -2,6 +2,7 @@
 const jsFiles = [
     "./data/gamedata.js",
     "./screens/home/logo.js",
+    "./screens/startscreen/startscreen.js",
     "./screens/home/gamelist.js",
     "./screens/home/popularmeme.js",
     "./screens/home/buttons.js",
@@ -22,10 +23,9 @@ const jsFiles = [
     "./screens/editmeme/buttons.js",
     "./screens/gameselection/gameselect.js",
     "./screens/gameselection/gameformeme.js",
-    
+   
     "constant.js",
     "ui.js",
-
   ];
   
   var cssFiles = [
@@ -33,7 +33,8 @@ const jsFiles = [
    "./screens/home/index.css",
    "./screens/editmeme/index.css",
    "./screens/memepage/index.css",
-   "./screens/gameselection/index.css"
+   "./screens/gameselection/index.css",
+   "./screens/startscreen/index.css"
     // Add more files as needed
   ];
   

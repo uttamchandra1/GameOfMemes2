@@ -64,12 +64,11 @@ const TextArea = (onDone ) => {
   settings.className = "settings";
   settings.style.display = "none";
   settings.style.position = "fixed"; // Change to fixed
-  settings.style.left = "50%";
-  settings.style.transform = "translateX(-50%)";
-  settings.style.backgroundColor = "#f0f0f0"; // Background color for visibility
-  settings.style.padding = "10px";
-  settings.style.borderRadius = "8px";
-  settings.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
+  //settings.style.transform = "translateX(-50%)";
+ // settings.style.backgroundColor = "#f0f0f0"; // Background color for visibility
+ // settings.style.padding = "10px";
+ // settings.style.borderRadius = "8px";
+ // settings.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
   const textSize = document.createElement("div");
   textSize.className = "textSize";

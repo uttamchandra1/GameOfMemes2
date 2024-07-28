@@ -39,7 +39,7 @@
 }
 
 .starteditbutton {
-  background-image: url("../../assets/startedit1.svg"); /* Path to your SVG file */
+  background-image: url("../../assets/startediting2.svg"); /* Path to your SVG file */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   background-position: center; /* Center the background image */
   background-size: contain; /* Make sure the image fits within the button */
@@ -47,9 +47,9 @@
   text-align: center;
   padding: 0;
   display: inline-block;
-
-  width: 336px;
-  height: 55px;
+  background-color: #F3BC00;
+  width: 335px;
+  height: 48px;
   text-shadow: 1px 1px 0px #060000, 2px 2px 0px #080206;
   -webkit-text-stroke: 0.63px #060000;
 
@@ -63,8 +63,14 @@
   color: #fefdfb;
 }
 
+.addtextdiv{
+  height: 35px;
+  border-radius: 8px;
+  
+}
+
 .addtextbutton {
-  background-image: url("../../assets/addtext.svg"); /* Path to your SVG file */
+  background-image: url("../../assets/addtext3.svg"); /* Path to your SVG file */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   background-position: center; /* Center the background image */
   background-size: contain; /* Make sure the image fits within the button */
@@ -72,11 +78,10 @@
   text-align: center;
   padding: 0;
   display: inline-block;
-
   -webkit-text-stroke: 0.63px #060000;
   width: 116px;
-  height: 42px;
-
+  height: 35px;
+  background-color: #F3BC00;
   font-family: "Dela Gothic One", sans-serif;
   letter-spacing: 4%;
   font-size: 12px;
@@ -84,9 +89,11 @@
   justify-content: center;
   align-items: center;
   color: #fefdfb;
+  
+
 }
 .addmusicbutton {
-  background-image: url("../../assets/addmusic.svg"); /* Path to your SVG file */
+  background-image: url("../../assets/addtext3.svg"); /* Path to your SVG file */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   background-position: center; /* Center the background image */
   background-size: contain; /* Make sure the image fits within the button */
@@ -96,7 +103,7 @@
   display: inline-block;
   -webkit-text-stroke: 0.63px #060000;
   width: 116px;
-  height: 42px;
+  height: 35px;
   font-family: "Dela Gothic One", sans-serif;
   letter-spacing: 2%;
   font-size: 12px;
@@ -105,6 +112,8 @@
   align-items: center;
   color: #fefdfb;
   margin-left: 15px;
+  background-color: #61AFFF;
+  ;
 }
 .backdiv {
   display: flex;
@@ -376,3 +385,4 @@
 .twobuttons {
   margin-right: 12px;
 }
+

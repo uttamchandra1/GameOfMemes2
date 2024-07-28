@@ -7,8 +7,9 @@ const EditButtons = (edittools, liveTextDiv) => {
 
   const addTextButton = document.createElement("button");
   addTextButton.className = "addtextbutton";
-  addTextButton.innerText = "Add Text";
-
+  addTextButton.innerHTML = "Add Text"
+  
+  
   //const textbuttonimg = document.createElement("img");
   //textbuttonimg.className = "textbutton";
   //textbuttonimg.src = "./assets/addtext.svg";
@@ -21,11 +22,12 @@ const EditButtons = (edittools, liveTextDiv) => {
         addTextButton.style.display = "block";
       });
       const liveTextDiv = textArea.querySelector(".liveTextDiv");
-  
+      const settings = textArea.querySelector(".settings");
       // Append the textArea to edittools and focus on the liveTextDiv
       edittools.appendChild(textArea);
       liveTextDiv.focus();
       liveTextDiv.contentEditable = true; // Ensure it's editable
+      settings.style.display = "flex";
   });
 
   const addMusicdiv = document.createElement("div");

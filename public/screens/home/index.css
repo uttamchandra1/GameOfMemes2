@@ -1,0 +1,179 @@
+.homescreen {
+  background: url(../../assets/BG1.png);
+  background-repeat: no-repeat;
+  background-color: #f4ecff;
+  display: flex;
+  width: 360px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.memeTemplateContainer {
+  width: 336px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fixeddiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  transition: top 0.3s ease-in-out;
+}
+
+
+.homebuttonme {
+  margin-top: 12px;
+}
+
+.DynammicDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 360px;
+  margin-top: 24px;
+}
+
+.ButtonDiv button {
+  width: 155px;
+  height: 36px;
+  cursor: pointer;
+  border: 1.67px solid #000000;
+  background-color: #ffffff8a;
+  box-shadow: 0px 1.67px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 5.84px 1.67px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 12px;
+}
+
+
+.gamelist {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 12px;
+}
+
+.Gamelisthome {
+  margin-top: 32px;
+}
+.game {
+  height: 132px;
+  width: 104px;
+  background-color: #ffffff;
+  border-width: 1px 1px 4px 1px;
+  border-style: solid;
+  border-color: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 8px 8px 0px #0000003d;
+}
+
+.game img {
+  width: 104px;
+  height: 104px;
+}
+
+.game p {
+  margin-top: 1px;
+  height: 12px;
+  width: 88px;
+  margin-left: 8px;
+
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.memes-template {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 32px;
+  grid-gap: 12px;
+}
+
+.add-caption-div {
+  width: 162px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.add-caption-div button {
+  border: none;
+}
+.meme-image-div {
+  width: 162px;
+  height: 162px;
+}
+
+.meme-image-div img {
+  width: 162px;
+  height: 162px;
+}
+
+.meme-template-container {
+  position: relative;
+  display: inline-block;
+  width: 162px;
+  height: 202px;
+  border-radius: 8px;
+  border-width: 1px 1px 4px 1px;
+  border-style: solid;
+  border-color: #000000;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 8px 0px #0000003d;
+}
+
+.add-caption-div button {
+  width: 162px;
+  padding: 8px;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.add-caption-div img {
+  margin-left: 12px;
+}
+
+.meme-template-page {
+  background-color: #d6d1cc;
+  padding: 4px;
+}
+
+.eye {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.heading {
+  width: 245px;
+  height: 17px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #ffffff;
+}

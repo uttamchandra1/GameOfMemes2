@@ -1,0 +1,45 @@
+.startscreen {
+  background-image: url("../../assets/BG.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  position: relative;
+  width: 360px;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+.logodiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 116px;
+}
+
+.logo {
+  width: 50px;
+  height: auto; 
+  animation: bounceGrow 1.4s ease forwards;
+}
+
+@keyframes bounceGrow {
+  0% {
+    width: 50px; /* Start small */
+  }
+  50% {
+    width: 240px; /* Grow larger */
+    transform: scale(1.2); /* Slightly overshoot */
+  }
+  70% {
+    width: 240px; /* Bounce back to slightly smaller */
+    transform: scale(0.9);
+  }
+  100% {
+    width: 240px; /* Final size */
+    transform: scale(1); /* Settle at final size */
+  }
+}

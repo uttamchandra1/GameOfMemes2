@@ -1,0 +1,19 @@
+.btngroup button {
+  background-color: #ffffff8a;
+  cursor: pointer; /* Pointer/hand icon */
+  position: absolute;
+}
+
+.btngroup button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.button2 {
+  width: 336px;
+  height: 36px;
+  border: 1.67px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  z-index: -1;
+}

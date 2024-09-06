@@ -1,0 +1,92 @@
+.musicbox {
+  display: flex;
+  align-items: center;
+  background: url(../../../assets/music2.svg);
+  background-repeat: no-repeat;
+  margin-top: 10px;
+  margin-left: 4px;
+  height: 72px;
+  width: 336px;
+  border-radius: 12px;
+  border-bottom: 4px solid #551083;
+  box-shadow: 0px 12px 12px 0px #00000040;
+  background-color: #ffffff;
+  background-size: cover;
+  position: relative;
+}
+
+
+.play-button {
+  width: 40px;
+  height: 40px;
+  margin-left: 16px;
+  background-color: #b96ddf;
+  border-radius: 70px;
+  border: 1px, 1px, 3px, 1px solid #060000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0px 1.08px 0px 0px #080206;
+}
+
+.play-icon {
+  width: 0; /* Set width to 0 to use borders to create the triangle */
+  height: 0; /* Set height to 0 for the same reason */
+  position: absolute;
+  border-left: 9px solid #fefdfb; /* Triangle color */
+  border-top: 7px solid transparent; /* Top part of the triangle */
+  border-bottom: 7px solid transparent; /* Bottom part of the triangle */
+}
+
+.playicon {
+  width: 18.15px;
+  height: 14.12px;
+  top: 44.74px;
+  left: 30.12px;
+  box-shadow: 0px 1.08px 0px 0px #080206;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 186px;
+  height: 48px;
+  margin-left: 24px;
+}
+
+.tag{
+  font-family: Montserrat , "sansarif";
+  font-weight: 600;
+  font-size: 10px;
+  text-align: center;
+  line-height: 8.31px;
+  padding: 6px 8px; 
+  border-radius: 4px; 
+  border: 1px solid #0380ff;
+}
+
+
+
+.nextbutton {
+  width: 48px;
+  height: 44px;
+  border-radius: 12px 0px 8px 0px; /* Adjusted to match the positioning */
+  background-color: #c585f2;
+  position: absolute; /* Allow positioning relative to .musicbox */
+  bottom: 0; /* Place it at the bottom */
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nextbuttonicon {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}

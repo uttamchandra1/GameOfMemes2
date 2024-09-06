@@ -1,0 +1,74 @@
+.backscreen {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F4ECFFE5;
+}
+
+
+.mainmessagecontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9A37E1;
+    border-bottom: 8px solid #551083;
+    border-radius: 16px;
+    width: 328px;
+    height: 184px;
+}
+
+.messagediv {
+   width: 312px;
+   height: 168px;
+   border-radius: 12px;
+   background-color: #FFFFFF;
+   border: 2px solid #9A37E14D;  
+
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+    
+}
+
+.headingspan {
+    font-size: 14px;
+    line-height: 16.8px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 400;
+    font-family: "Dela Gothic One" , sans-serif;
+    color: #360076;
+}
+
+
+.paraspan {
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    font-weight: 500;
+    font-family: "Montserrat" , sans-serif;
+    color: #666466;
+    margin-top: 12px;
+}
+
+.textdiv {
+    width: 252px;
+    height: 58px;
+}
+
+.askbuttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 248px;
+    height: 42px;
+    gap: 16px;
+    margin-top: 24px;
+}

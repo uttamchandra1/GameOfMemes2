@@ -1,0 +1,17 @@
+.backcontainer {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.backTextDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Dela Gothic One , "sansarif";
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #360076;
+  margin-left: 12px;
+}

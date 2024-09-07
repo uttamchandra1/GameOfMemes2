@@ -11,10 +11,38 @@ const BackScreen = () => {
     const catgifdiv = document.createElement("div");
     catgifdiv.className = "catgifdiv";
 
+    const catgifImage = document.createElement("img");
+    catgifImage.src = "./assets/exitcat.gif"
+    catgifImage.className = "catimage"
+
+    catgifdiv.appendChild(catgifImage);
+
+
+    const popmessage = document.createElement("div");
+    popmessage.className = "popmessage";
+
+    const popmessageImage = document.createElement("img");
+    popmessageImage.className = "popmessageimage";
+    popmessageImage.src = "./assets/seriously.png"
+
+    popmessage.appendChild(popmessageImage)
+
     document.body.appendChild(backscreen);
 
     const mainmessageContainer = document.createElement("div");
     mainmessageContainer.className = "mainmessagecontainer";
+
+    const gifDiv = document.createElement("div");
+    gifDiv.className = "gifDiv";
+
+    const maingifDiv = document.createElement("div");
+    maingifDiv.className = "maingifdiv";
+
+    
+
+    gifDiv.appendChild(catgifdiv);
+    gifDiv.appendChild(popmessage);
+    maingifDiv.appendChild(gifDiv);
 
     const messagediv = document.createElement("div");
     messagediv.className = "messagediv";
@@ -31,7 +59,8 @@ const BackScreen = () => {
     paraspan.innerHTML = "Your changes won’t be saved!";
 
     textdiv.appendChild(headingspan);
-    textdiv.appendChild(paraspan)
+    textdiv.appendChild(paraspan);
+
     messagediv.appendChild(textdiv)
     
 
@@ -42,7 +71,7 @@ const BackScreen = () => {
     exitButton.appendChild(NormalButton(
         width = "117px", 
         height = "35px", 
-        text = "Yes,exit", 
+        text = "Yes, exit", 
         fontSize = "12px",
         gradientColors = ["#fbeb00", "#f3bc00", "#f3bc00", "#ed8d00"],
       ))
@@ -69,7 +98,7 @@ const BackScreen = () => {
     askButtons.appendChild(stayButton)
 
       messagediv.appendChild(askButtons)
-
+      mainbackcontainer.appendChild(maingifDiv);
     mainmessageContainer.appendChild(messagediv)
     mainbackcontainer.appendChild(mainmessageContainer);
     backscreen.appendChild(mainbackcontainer);

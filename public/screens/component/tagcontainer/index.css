@@ -1,0 +1,135 @@
+.tag-container {
+  margin-top: 24px;
+}
+
+.uppercontainer {
+  display: flex;
+  position: relative;
+}
+
+.topiccontainer {
+  width: 164px;
+  height: 18px;
+  padding: 10px;
+  border-radius: 12px 12px 0px 0px;
+  opacity: 0px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  font-family: "Dela Gothic One" , sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #fefdfb;
+}
+
+.gifContainer {
+  width: 110px;
+  height: 76px;
+  right: 0;
+  bottom: 0;
+  object-fit: contain;
+  margin-top: 19px;
+  z-index: -1000;
+}
+
+.catgif {
+  height: 76px;
+  margin-left: 220px;
+  margin-bottom: -15px;
+  
+ 
+  
+}
+.lowercontainer {
+  width: 328px;
+  padding: 8px;
+  border-radius: 0px 16px 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerContainer {
+  width: 312px;
+  padding: 12px 5.5px 8px 5.5px;
+  border-radius: 12px;
+  background-color: #f4ecff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allow the tags to wrap within the container */
+  align-items: flex-start; /* Align the tags to the top */
+  justify-content: center; /* Align tags to the left */
+  overflow-y: auto; /* Add scroll if tags overflow vertically */
+  padding: 8px; /* Add some padding for spacing inside the div */
+  gap: 10px;
+}
+
+.tagsContainer {
+  width: 301px;
+  height: 148px;
+}
+
+.tag-class {
+  padding: 8px 12px 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  opacity: 0.64px;
+
+  display: flex;
+  flex-wrap: wrap; /* Allow the tags to wrap within the container */
+  align-items: flex-start; /* Align the tags to the top */
+  justify-content: center; /* Align tags to the left */
+  overflow-y: auto; /* Add scroll if tags overflow vertically */
+  padding: 8px; /* Add some padding for spacing inside the div */
+  gap: 10px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: center;
+}
+
+.active-mood {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #551083;
+  border-width: 1px 1px 4px 1px;
+  opacity: 1;
+  background-color: #9a37e1;
+  box-shadow: 0px 8px 8px 0px #0000003d;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.active-Genre {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #023382;
+  border-width: 1px 1px 4px 1px;
+  opacity: 1;
+  background-color: #0380ff;
+  box-shadow: 0px 8px 8px 0px #0000003d;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.active-Tempo {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #66050f;
+  border-width: 1px 1px 4px 1px;
+  opacity: 1;
+  background-color: #e51c3c;
+  box-shadow: 0px 8px 8px 0px #0000003d;
+  color: #ffffff;
+  cursor: pointer;
+}

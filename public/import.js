@@ -26,6 +26,8 @@ const jsFiles = [
     "./screens/component/buttonme/controlbutton.js",
     "./screens/component/buttonme/edittoolsbutton.js",
     "./screens/component/buttonme/normalbutton.js",
+    "./screens/component/tagcontainer/tagcontainer.js",
+    "./screens/component/tagcontainer/tempo.js",
     "./screens/editmeme/startEditingpage.js",
     
     "./screens/editmeme/buttons.js",
@@ -37,6 +39,7 @@ const jsFiles = [
     "./screens/component/dialogBox/createtags.js",
     "./screens/component/backflow/backflow.js",
     "./screens/backscreen/backscreen.js",
+    "./screens/musicselection/musicselection.js",
     
    
     "constant.js",
@@ -54,8 +57,11 @@ const jsFiles = [
    "./screens/component/dialogBox/index.css",
    "./screens/component/backflow/index.css",
    "./screens/component/buttonme/index.css",
+   "./screens/component/tagcontainer/index.css",
    "./screens/addmusic/index.css",
-   "./screens/backscreen/index.css"
+   "./screens/backscreen/index.css",
+   "./screens/musicselection/index.css",
+  
 
     
   ];

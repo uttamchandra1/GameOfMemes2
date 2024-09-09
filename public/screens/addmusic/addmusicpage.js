@@ -28,12 +28,13 @@ const openMusicOverlay = (memeTemplateUrl, game, music) => {
 
     musicbox.addEventListener("click", () => {
       document.body.removeChild(addmusicpage);
-      Meme_Edit_Screen(memeTemplateUrl, game, music);
+      changeScreen(Meme_Edit_Screen(memeTemplateUrl, game, music))
     });
   });
 
   const genrateTrack = document.createElement("div");
   genrateTrack.className = "genrateTrack";
+
 
   genrateTrack.appendChild(
     createCustomButton(
@@ -45,6 +46,11 @@ const openMusicOverlay = (memeTemplateUrl, game, music) => {
       (DynamicIconSrc = "./assets/musicgliter.png")
     )
   );
+
+  genrateTrack.addEventListener("click", () => {
+    document.body.removeChild(addmusicpage);
+    changeScreen(Music_Selection(memeTemplateUrl, game))
+  });
 
   function onMostPopularClick() {
     console.log("Popular Tracks");
@@ -62,6 +68,8 @@ const openMusicOverlay = (memeTemplateUrl, game, music) => {
       initialActive: "Yours Tracks",
     })
   );
+
+  
   addmusicpage.appendChild(musicpageBack);
   addmusicpage.appendChild(musicbuttoncontainer);
   addmusicpage.appendChild(musiccontainer);

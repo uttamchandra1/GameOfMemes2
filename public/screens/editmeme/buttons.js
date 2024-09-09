@@ -24,25 +24,32 @@ const EditButtons = (memeTemplateUrl, game, edittools, liveTextDiv , audio) => {
   addMusicdiv.className = "addmusicdiv";
 
   addMusicdiv.addEventListener("click", () => {
+
+    if(audio){
+      audio.remove()
+      console.log("audio removed")
+    }
     openMusicOverlay(memeTemplateUrl, game);
 
-    if (!audio) {
-      
-      addMusicdiv.innerHTML = ""; 
-      addMusicdiv.appendChild(
-        EdiToolsButton(
-          edittoolIconSrc = "./assets/soundwave.gif",
-          edittoolIconClass = "soundwaveimg",
-          gradientColors = ["#A5E7FF", "#61AFFF", "#61AFFF", "#1D77FF"],
-          width = "125px",
-          elementType = "img",  
-          elementClass = "crossbuttontool", 
-          elementContent = "./assets/crossbuttontools.png"  
-        )
-      );
-    }
+
   });
 
+  if (audio) {
+      
+    addMusicdiv.innerHTML = ""; 
+    addMusicdiv.appendChild(
+      EdiToolsButton(
+        edittoolIconSrc = "./assets/soundwave.gif",
+        edittoolIconClass = "soundwaveimg",
+        gradientColors = ["#A5E7FF", "#61AFFF", "#61AFFF", "#1D77FF"],
+        width = "125px",
+        elementType = "img",  
+        elementClass = "crossbuttontool", 
+        elementContent = "./assets/crossbuttontools.png"  
+      )
+    );
+  }else {
+    addMusicdiv.innerHTML = ""; 
     addMusicdiv.appendChild(
       EdiToolsButton(
         edittoolIconSrc = "./assets/musicvector.png",
@@ -54,6 +61,9 @@ const EditButtons = (memeTemplateUrl, game, edittools, liveTextDiv , audio) => {
        elementContent = "Add Music"  
       )
     );
+
+  }
+    
   
   addtextdiv.appendChild(
     EdiToolsButton(

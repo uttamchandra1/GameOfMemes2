@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:docker": "gcloud builds submit --tag gcr.io/slack-434121/gm-cloud-runner-image",
+    "deploy": "gcloud run deploy cloud-runner --image gcr.io/slack-434121/gm-cloud-runner-image --platform managed"
   },
   "keywords": [],
   "author": "",

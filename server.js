@@ -1,83 +1,72 @@
 const express = require("express");
-const fileUpload = require("express-fileupload");
 const ffmpeg = require("fluent-ffmpeg");
 const path = require("path");
 const fs = require("fs");
-
+const fileUpload = require("express-fileupload");
 const app = express();
-const port = 3000;
+const port = 8080;
 
-// Enable files upload
+app.use(express.static("public"));
 app.use(fileUpload());
 
-// Serve static files
-app.use(express.static("public"));
-
-app.post("/create-video", (req, res) => {
+app.post("/create-video", async (req, res) => {
   const { files } = req;
   const image = files.image;
   const audio = files.audio;
 
-  // Temporary paths to save uploaded files
-  const imagePath = path.join(__dirname, "uploads", image.name);
-  const audioPath = path.join(__dirname, "uploads", audio.name);
+  const imageName = new Date().getTime().toString() + image.name;
+  const audioName = new Date().getTime().toString() + audio.name;
+
+  const imagePath = path.join(__dirname, "uploads", imageName);
+  const audioPath = path.join(__dirname, "uploads", audioName);
+
+  await image.mv(imagePath);
+  await audio.mv(audioPath);
+
   const outputPath = path.join(__dirname, "output", `${Date.now()}.mp4`);
 
-  // Ensure the uploads directory exists
-  if (!fs.existsSync(path.dirname(imagePath))) {
-    fs.mkdirSync(path.dirname(imagePath), { recursive: true });
+  // Ensure the output directory exists
+  if (!fs.existsSync(path.dirname(outputPath))) {
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   }
 
-  // Save the image and audio files temporarily
-  image.mv(imagePath, (err) => {
-    if (err) {
-      return res.status(500).send("Error saving image file");
-    }
+  ffmpeg()
+    .input(audioPath)
+    .input(imagePath)
+    .loop(10)
+    .outputOptions([
+      "-c:v libx264",
+      "-c:a aac",
+      "-pix_fmt yuv420p",
+      "-shortest", // Ensures the video ends when the audio ends
+      "-tune stillimage", // Optimize for still images
+      "-vf scale=1280:720", // Set resolution to 720p
+      "-r 25", // Frame rate
+      "-b:v 1M", // Video bitrate
+      "-b:a 192k", // Audio bitrate
+    ])
+    .on("end", () => {
+      console.log("Video created successfully!");
 
-    audio.mv(audioPath, (err) => {
-      if (err) {
-        return res.status(500).send("Error saving audio file");
-      }
+      // Download the video and delete the output file afterward
+      res.download(outputPath, "meme-video.mp4", (err) => {
+        if (err) {
+          console.error(err);
+        }
 
-      // Combine the image and audio into a video
-      ffmpeg()
-        .input(imagePath)
-        .input(audioPath)
-        .loop(10)
-        .outputOptions(
-          "-c:v",
-          "libx264",
-          "-c:a",
-          "aac",
-          "-pix_fmt",
-          "yuv420p",
-          "-shortest",
-          "-tune stillimage", // Optimize for still images
-          "-vf format=yuv420p", // Ensures video format compatibility
-          "-r 25"
-        )
-        .save(outputPath)
-        .on("end", () => {
-          // Remove the temporary image and audio files
-          fs.unlinkSync(imagePath);
-          fs.unlinkSync(audioPath);
+        // Delete the output video file
+        fs.unlinkSync(outputPath);
 
-          // Send the created video to the client
-          res.download(outputPath, "meme-video.mp4", (err) => {
-            if (err) {
-              console.error(err);
-            }
-
-            // Remove the output video file after download
-            fs.unlinkSync(outputPath);
-          });
-        })
-        .on("error", (err) => {
-          console.error("Error creating video:", err);
-          res.status(500).send("Error creating video");
-        });
-    });
-  });
+        // Optionally delete the input files
+        // fs.unlinkSync(imagePath);
+        // fs.unlinkSync(audioPath);
+      });
+    })
+    .on("error", (err) => {
+      console.error("Error creating video:", err);
+      res.status(500).send("Error creating video");
+    })
+    .save(outputPath);
 });
 
 app.listen(port, () => {

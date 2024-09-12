@@ -29,8 +29,7 @@ const jsFiles = [
     "./screens/component/tagcontainer/tagcontainer.js",
     "./screens/component/tagcontainer/tempo.js",
     "./screens/editmeme/startEditingpage.js",
-    
-    "./screens/editmeme/buttons.js",
+    "./screens/editmeme/buttonme.js",
     "./screens/gameselection/gameselect.js",
     "./screens/gameselection/gameformeme.js",
     "./screens/component/twobuttons/twobutton.js",
@@ -40,7 +39,7 @@ const jsFiles = [
     "./screens/component/backflow/backflow.js",
     "./screens/backscreen/backscreen.js",
     "./screens/musicselection/musicselection.js",
-    
+    "./screens/editmeme/buttons.js",
    
     "constant.js",
     "ui.js",

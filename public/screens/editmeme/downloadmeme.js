@@ -1,4 +1,4 @@
-const createAndDownloadMeme = (memeTemplateUrl, audio) => {
+const createAndDownloadMeme = (memeTemplateUrl, currentAudio) => {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   const memecontainer = document.querySelector(".memecontainer");
@@ -112,7 +112,7 @@ const createAndDownloadMeme = (memeTemplateUrl, audio) => {
     Promise.all(assetPromises).then(() => {
       // Convert the canvas to a blob and prepare FormData
       canvas.toBlob((blob) => {
-        fetch(audio.src)
+        fetch(currentAudio.src)
           .then((response) => response.blob())
           .then((audioBlob) => {
             const formData = new FormData();

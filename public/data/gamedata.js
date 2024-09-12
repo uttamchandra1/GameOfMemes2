@@ -959,6 +959,7 @@ const MAKE_MUSIC_OPTIONS = [
     innerContainerHeight : "156px",
     topicContainerBg : "#C585F2",
     tagActiveClass: "active-mood",
+    positionRight : "0"
   },
   {
     topic: "Choose the Genre",
@@ -983,18 +984,20 @@ const MAKE_MUSIC_OPTIONS = [
     innerContainerHeight : "156px",
     topicContainerBg : "#61AFFF",
     tagActiveClass: "active-Genre",
+    positionLeft : "0"
   },
   {
     topic: "Tempo",
     gif : "./assets/tempocat.gif",
     tags: ["Slow", "Medium", "Fast"],
     mainContainerBg: "#E51C3C",
-    mainContainerHeight : "184px",
+    mainContainerHeight : "71px",
     mainContainerBorderColor : "8px solid #66050F",
     innerContainerBorderColor : "2px solid #E51C3C4D",
-    innerContainerHeight : "156px",
+    innerContainerHeight : "55px",
     topicContainerBg : "#FF5772",
     tagActiveClass: "active-Tempo",
+    positionRight : "0"
   },
 ];
 

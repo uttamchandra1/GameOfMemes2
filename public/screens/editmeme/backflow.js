@@ -31,7 +31,8 @@ const Backflow = (memeTemplateUrl , game , audio) => {
   
 
   sharebutton.addEventListener("click" , () => {
-    createAndDownloadMeme(memeTemplateUrl , audio)
+    console.log("Share button clicked, audio:", currentAudio);
+    createAndDownloadMeme(memeTemplateUrl , currentAudio)
   })
 
 

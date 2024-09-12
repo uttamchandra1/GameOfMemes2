@@ -1,5 +1,5 @@
 
-const EditButtons = (memeTemplateUrl, game, edittools, liveTextDiv , audio) => {
+const EditButtons = (memeTemplateUrl, game, edittools) => {
   const buttonsdiv = document.createElement("div");
   buttonsdiv.className = "buttonsdiv";
 
@@ -22,33 +22,49 @@ const EditButtons = (memeTemplateUrl, game, edittools, liveTextDiv , audio) => {
 
   const addMusicdiv = document.createElement("div");
   addMusicdiv.className = "addmusicdiv";
-
+  
   addMusicdiv.addEventListener("click", () => {
+    
+    console.log(currentAudio)
 
-    if(audio){
-      audio.remove()
-      console.log("audio removed")
+    if (currentAudio) {
+      
+      addMusicdiv.innerHTML = ""; 
+      addMusicdiv.appendChild(
+        EdiToolsButton(
+          edittoolIconSrc = "./assets/soundwave.gif",
+          edittoolIconClass = "soundwaveimg",
+          gradientColors = ["#A5E7FF", "#61AFFF", "#61AFFF", "#1D77FF"],
+          width = "125px",
+          elementType = "img",  
+          elementClass = "crossbuttontool", 
+          elementContent = "./assets/crossbuttontools.png"  
+        )
+      );
+  
+      console.log(" audio detected" , currentAudio)
+    }else {
+      addMusicdiv.innerHTML = ""; 
+      addMusicdiv.appendChild(
+        EdiToolsButton(
+          edittoolIconSrc = "./assets/musicvector.png",
+          edittoolIconClass = "edittolsicon",
+          gradientColors = ["#A5E7FF", "#61AFFF", "#61AFFF", "#1D77FF"],
+          width = "125px",
+          elementType = "span",  
+         elementClass = "edittoolstext", 
+         elementContent = "Add Music"  
+        )
+      );
+  
+      console.log("NO audio detected" , currentAudio)
+  
     }
-    openMusicOverlay(memeTemplateUrl, game);
 
-
+    openMusicOverlay(memeTemplateUrl, game );
   });
 
-  if (audio) {
-      
-    addMusicdiv.innerHTML = ""; 
-    addMusicdiv.appendChild(
-      EdiToolsButton(
-        edittoolIconSrc = "./assets/soundwave.gif",
-        edittoolIconClass = "soundwaveimg",
-        gradientColors = ["#A5E7FF", "#61AFFF", "#61AFFF", "#1D77FF"],
-        width = "125px",
-        elementType = "img",  
-        elementClass = "crossbuttontool", 
-        elementContent = "./assets/crossbuttontools.png"  
-      )
-    );
-  }else {
+  
     addMusicdiv.innerHTML = ""; 
     addMusicdiv.appendChild(
       EdiToolsButton(
@@ -62,7 +78,8 @@ const EditButtons = (memeTemplateUrl, game, edittools, liveTextDiv , audio) => {
       )
     );
 
-  }
+  
+  
     
   
   addtextdiv.appendChild(

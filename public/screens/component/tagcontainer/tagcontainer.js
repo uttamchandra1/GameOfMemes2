@@ -38,6 +38,12 @@ const TagContainer = (option) => {
   const gifContainer = document.createElement("div");
   gifContainer.className = "gifcontainer";
 
+  if (option.positionRight) {
+    gifContainer.style.right = option.positionRight;
+  } else if (option.positionLeft) {
+    gifContainer.style.left = option.positionLeft;
+  }
+
   const catGif = document.createElement("img");
   catGif.className = "catgif";
   catGif.src = option.gif;

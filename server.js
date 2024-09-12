@@ -40,7 +40,7 @@ app.post("/create-video", async (req, res) => {
       "-pix_fmt yuv420p",
       "-shortest", // Ensures the video ends when the audio ends
       "-tune stillimage", // Optimize for still images
-      "-vf scale=1280:720", // Set resolution to 720p
+      "-vf scale=720:720", // Set resolution to 720p
       "-r 25", // Frame rate
       "-b:v 1M", // Video bitrate
       "-b:a 192k", // Audio bitrate

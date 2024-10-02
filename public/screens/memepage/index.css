@@ -1,10 +1,6 @@
 .gamememe {
-
-    width: 360px;
-    height: 63px;
+    width: 336px;
     position: fixed;
-    top: 0;
-    left: 0;
     z-index: 10;
 }
 
@@ -74,4 +70,10 @@ background: transparent;
     justify-content: center;
     align-items: center;
     margin-top: 51px;
+}
+
+.backmemepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
